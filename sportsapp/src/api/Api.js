@@ -6,7 +6,7 @@ const defaultConfig = {
   method: "GET",
   headers: {
     "x-rapidapi-host": "mlb-data.p.rapidapi.com",
-    "x-rapidapi-key": "655bdaa00dmsh1dfed893f79b687p102403jsn162"
+    "x-rapidapi-key": "RichardT"
   }
 }
 

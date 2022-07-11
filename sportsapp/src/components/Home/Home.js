@@ -5,7 +5,6 @@ const Home = ({ apple }) => {
   return (
     <div>
       This is the homepage
-      <League apple={"This is it"} />
     </div>
   )
 }
