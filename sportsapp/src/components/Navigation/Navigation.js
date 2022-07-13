@@ -3,25 +3,25 @@ import './Navigation.css'
 
 const Navigation = () => {
   return (
-    <div className='nav'>
-      <nav>
-        <NavLink to='/'>
-          <span className='league'>Home</span>
-        </NavLink>
-        <span>|</span>
-        <NavLink to='/league'>
-          <span>League</span>
-        </NavLink>
-        <span>|</span>
-        <NavLink to='/team'>
-          <span>Team</span>
-        </NavLink>
-        <span>|</span>
-        <NavLink to='/player'>
-          <span>Player</span>
-        </NavLink>
-      </nav>
-    </div>
+    // <div className='nav'>
+    <nav>
+      <NavLink to='/'>
+        <span className='league'>Home</span>
+      </NavLink>
+      <span>|</span>
+      <NavLink to='/league'>
+        <span>League</span>
+      </NavLink>
+      <span>|</span>
+      <NavLink to='/team'>
+        <span>Team</span>
+      </NavLink>
+      <span>|</span>
+      <NavLink to='/player'>
+        <span>Player</span>
+      </NavLink>
+    </nav>
+    // </div>
   )
 }
 

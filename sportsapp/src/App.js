@@ -1,4 +1,3 @@
-import './App.css';
 import Team from './components/Team/Team'
 import Player from './components/Player/Player';
 import League from './components/League/League'
@@ -14,12 +13,12 @@ const App = () => {
 
 
   return (
-    <div className="App">
+    <div className='app'>
       <AllRoutes />
-      <Home />
-      {/* <Team team={team} /> */}
+      {/* <Home /> */}
       <League team={team} />
-      {/* <Player /> */}
+      {/* <Team team={team} /> */}
+      <Player />
     </div>
   );
 }

@@ -1,0 +1,10 @@
+.togglebtn {
+  color: blue;
+  height: 40px;
+}
+
+.league {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

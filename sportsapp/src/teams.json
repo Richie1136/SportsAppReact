@@ -3,6 +3,22 @@
     "totalSize": "30",
     "row": [
       {
+        "name_display_full": "American League",
+        "mlb_org": "American League",
+        "league_full": "American League",
+        "league": "AL",
+        "logo": "https://content.sportslogos.net/logos/53/488/full/3470__american_league-primary-2019.png",
+        "name_display_long": "American League"
+      },
+      {
+        "name_display_full": "National League",
+        "mlb_org": "National League",
+        "league_full": "National League",
+        "league": "NL",
+        "logo": "https://content.sportslogos.net/logos/54/489/full/6794__national_league-alternate-2019.png",
+        "name_display_long": "National League"
+      },
+      {
         "phone_number": "(602) 462-6500",
         "venue_name": "Chase Field",
         "franchise_code": "ARI",
