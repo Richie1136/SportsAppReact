@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <div>
       This is the homepage
+      <League />
     </div>
   )
 }

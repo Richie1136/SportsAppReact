@@ -1,12 +1,11 @@
 import Team from './components/Team/Team'
 import Player from './components/Player/Player';
 import League from './components/League/League'
-import Header from './components/Header/Header'
-import Home from './components/Home/Home'
 import Navigation from './components/Navigation/Navigation'
 import teamData from './teams.json'
 import AllRoutes from './components/routes/Routes';
 import { useState } from 'react'
+import Home from './components/Home/Home';
 
 const App = () => {
   const [team, setTeam] = useState(teamData)
@@ -16,9 +15,10 @@ const App = () => {
     <div className='app'>
       <AllRoutes />
       {/* <Home /> */}
-      <League team={team} />
+      {/* <Home /> */}
       {/* <Team team={team} /> */}
-      <Player />
+      {/* <League team={team} /> */}
+      {/* <Player /> */}
     </div>
   );
 }

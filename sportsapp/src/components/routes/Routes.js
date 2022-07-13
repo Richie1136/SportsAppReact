@@ -6,14 +6,15 @@ import Header from '../Header/Header'
 import Home from '../Home/Home'
 import NotFound from '../NotFound/NotFound';
 import Navigation from '../Navigation/Navigation'
+import TeamDetails from '../teamdetails/TeamDetails';
 
 const AllRoutes = () => (
   <>
     <Navigation />
     <Routes>
-      <Route path='/' element={<Navigate to="/league" />} />
-      <Route path='/league' element={<League />} />
+      <Route path='/' element={<League />} />
       <Route path='/team' element={<Team />} />
+      <Route path='/team/:venue_name' element={<TeamDetails />} />
       <Route path='/player' element={<Player />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
