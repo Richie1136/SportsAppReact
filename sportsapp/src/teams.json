@@ -19,6 +19,7 @@
         "name_display_long": "National League"
       },
       {
+        "team_id": 109,
         "phone_number": "(602) 462-6500",
         "venue_name": "Chase Field",
         "franchise_code": "ARI",
@@ -63,6 +64,7 @@
         "venue_short": "Chase Field"
       },
       {
+        "team_id": 144,
         "phone_number": "(602) 462-6500",
         "venue_name": "Truist Park",
         "address_city": "Atlanta",
@@ -107,6 +109,7 @@
         "venue_short": "Truist Park"
       },
       {
+        "team_id": 110,
         "phone_number": "(410) 685-9800",
         "venue_name": "Oriole Park at Camden Yards",
         "franchise_code": "MLA",
@@ -151,6 +154,7 @@
         "venue_short": "Oriole Park"
       },
       {
+        "team_id": 111,
         "phone_number": "(617) 267-9440",
         "venue_name": "Fenway Park",
         "franchise_code": "BOS",
@@ -195,6 +199,7 @@
         "venue_short": "Fenway Park"
       },
       {
+        "team_id": 112,
         "phone_number": "(773) 404-2827",
         "venue_name": "Wrigley Field",
         "franchise_code": "CH2",
@@ -239,6 +244,7 @@
         "venue_short": "Wrigley Field"
       },
       {
+        "team_id": 145,
         "phone_number": "(312) 674-1000",
         "venue_name": "Guaranteed Rate Field",
         "franchise_code": "CHA",
@@ -283,6 +289,7 @@
         "venue_short": "Guaranteed Rate Fld"
       },
       {
+        "team_id": 113,
         "phone_number": "(513) 765-7000",
         "venue_name": "Great American Ball Park",
         "franchise_code": "CN2",
@@ -327,6 +334,7 @@
         "venue_short": "GABP"
       },
       {
+        "team_id": 114,
         "phone_number": "(216) 420-4200",
         "venue_name": "Progressive Field",
         "franchise_code": "CLE",
@@ -371,6 +379,7 @@
         "venue_short": "Progressive Field"
       },
       {
+        "team_id": 115,
         "phone_number": "(303) 292-0200",
         "venue_name": "Coors Field",
         "franchise_code": "COL",
@@ -415,6 +424,7 @@
         "venue_short": "Coors Field"
       },
       {
+        "team_id": 116,
         "phone_number": "(313) 471-2000",
         "venue_name": "Comerica Park",
         "franchise_code": "DET",
@@ -459,6 +469,7 @@
         "venue_short": "Comerica Park"
       },
       {
+        "team_id": 117,
         "phone_number": "(713) 259-8000",
         "venue_name": "Minute Maid Park",
         "franchise_code": "HOU",
@@ -502,6 +513,7 @@
         "file_code": "hou"
       },
       {
+        "team_id": 118,
         "phone_number": "(816) 921-8000",
         "venue_name": "Kauffman Stadium",
         "franchise_code": "KCA",
@@ -546,6 +558,7 @@
         "venue_short": "Kauffman Stadium"
       },
       {
+        "team_id": 108,
         "phone_number": "(714) 940-2000",
         "venue_name": "Angel Stadium",
         "franchise_code": "LAA",
@@ -590,6 +603,7 @@
         "venue_short": "Angel Stadium"
       },
       {
+        "team_id": 119,
         "phone_number": "(323) 224-1500",
         "venue_name": "Dodger Stadium",
         "franchise_code": "BR3",
@@ -634,6 +648,7 @@
         "venue_short": "Dodger Stadium"
       },
       {
+        "team_id": 158,
         "phone_number": "(877) 627-5467",
         "venue_name": "loanDepot park",
         "franchise_code": "FLO",
@@ -679,6 +694,7 @@
         "venue_short": "loanDepot park"
       },
       {
+        "team_id": 16,
         "phone_number": "(414) 902-4400",
         "venue_name": "American Family Field",
         "franchise_code": "SE1",
@@ -723,6 +739,7 @@
         "venue_short": "Amer. Family Field"
       },
       {
+        "team_id": 142,
         "phone_number": "(612) 659-3400",
         "venue_name": "Target Field",
         "franchise_code": "WS1",
@@ -767,6 +784,7 @@
         "venue_short": "Target Field"
       },
       {
+        "team_id": 121,
         "phone_number": "(718) 507-6387",
         "venue_name": "Citi Field",
         "franchise_code": "NYN",
@@ -811,6 +829,7 @@
         "venue_short": "Citi Field"
       },
       {
+        "team_id": 147,
         "phone_number": "(718) 293-4300",
         "venue_name": "Yankee Stadium",
         "franchise_code": "BLA",
@@ -855,6 +874,7 @@
         "venue_short": "Yankee Stadium"
       },
       {
+        "team_id": 133,
         "phone_number": "(510) 638-4900",
         "venue_name": "Oakland Coliseum",
         "franchise_code": "PHA",
@@ -899,6 +919,7 @@
         "venue_short": "Oakland Coliseum"
       },
       {
+        "team_id": 142,
         "phone_number": "(215) 463-6000",
         "venue_name": "Citizens Bank Park",
         "franchise_code": "WOR",
@@ -943,6 +964,7 @@
         "venue_short": "Citizens Bank Park"
       },
       {
+        "team_id": 134,
         "phone_number": "(412) 323-5000",
         "venue_name": "PNC Park",
         "franchise_code": "PT1",
@@ -987,6 +1009,7 @@
         "venue_short": "PNC Park"
       },
       {
+        "team_id": 135,
         "phone_number": "(619) 795-5000",
         "venue_name": "Petco Park",
         "franchise_code": "SDN",
@@ -1031,6 +1054,7 @@
         "venue_short": "Petco Park"
       },
       {
+        "team_id": 137,
         "phone_number": "(415) 972-2000",
         "venue_name": "Oracle Park",
         "franchise_code": "TRN",
@@ -1075,6 +1099,7 @@
         "venue_short": "Oracle Park"
       },
       {
+        "team_id": 136,
         "phone_number": "(206) 346-4000",
         "venue_name": "T-Mobile Park",
         "franchise_code": "SEA",
@@ -1119,6 +1144,7 @@
         "venue_short": "T-Mobile Park"
       },
       {
+        "team_id": 138,
         "phone_number": "(314) 345-9600",
         "venue_name": "Busch Stadium",
         "franchise_code": "SL4",
@@ -1163,6 +1189,7 @@
         "venue_short": "Busch Stadium"
       },
       {
+        "team_id": 139,
         "phone_number": "(727) 825-3137",
         "venue_name": "Tropicana Field",
         "franchise_code": "TBA",
@@ -1207,6 +1234,7 @@
         "venue_short": "Tropicana Field"
       },
       {
+        "team_id": 140,
         "phone_number": "(817) 533-1972",
         "venue_name": "Globe Life Field",
         "franchise_code": "WS2",
@@ -1252,6 +1280,7 @@
         "venue_short": "Globe Life Park"
       },
       {
+        "team_id": 141,
         "phone_number": "(416) 341-1000",
         "venue_name": "Rogers Centre",
         "franchise_code": "TOR",
@@ -1297,6 +1326,7 @@
         "venue_short": "Rogers Centre"
       },
       {
+        "team_id": 120,
         "phone_number": "(202) 349-0400",
         "venue_name": "Nationals Park",
         "franchise_code": "MON",

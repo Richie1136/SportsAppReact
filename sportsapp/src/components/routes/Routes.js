@@ -14,7 +14,7 @@ const AllRoutes = () => (
     <Routes>
       <Route path='/' element={<League />} />
       <Route path='/team' element={<Team />} />
-      <Route path='/team/:venue_name' element={<TeamDetails />} />
+      <Route path='/team/:team_id' element={<TeamDetails />} />
       <Route path='/player' element={<Player />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
