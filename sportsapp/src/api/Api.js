@@ -30,11 +30,23 @@ export const fetchTeams = async (team_id) => {
   }
 }
 
-    // fetchPlayer: async (player_id) => {
-    //   const endpoint = `"https://mlb-data.p.rapidapi.com/json/named.player_info.bam?sport_code='mlb'&${player_id}"`;
-    //   return await (await fetch(endpoint)).json();
-    // }
+// fetchPlayer: async (player_id) => {
+//   const endpoint = `"https://mlb-data.p.rapidapi.com/json/named.player_info.bam?sport_code='mlb'&${player_id}"`;
+//   return await (await fetch(endpoint)).json();
+// }
 
-  //http://lookup-service-prod.mlb.com/json/named.roster_40.bam?team_id=%27121%27
+//http://lookup-service-prod.mlb.com/json/named.roster_40.bam?team_id=%27121%27
 
+export const baseurlPlayer = "https://api.sportsdata.io/v3/mlb/scores/json"
+export const APIKEY = '45ca846d2b2c4f5ab1f8b6e1a6f66ffb'
 
+export const getPlayerDetails = async () => {
+  try {
+    const response = await fetch(`${baseurlPlayer}/Players/${APIKEY}`)
+    console.log(response)
+    const data = response.json()
+    console.log(data)
+  } catch (error) {
+    console.log(error)
+  }
+}
