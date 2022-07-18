@@ -25,10 +25,10 @@ const League = ({ team }) => {
   return (
     <div className='league'>
       {toggle ? <button className='togglebtn' onClick={triggleToggle}>Toggle to AL</button> : <button className='togglebtn' onClick={triggleToggle}>Toggle to NL</button>}
-      {result?.map(({ name_display_full, logo, team_id, name }) => (
+      {result?.map(({ name_display_full, logo, team_id, name, Team }) => (
         <Card key={name_display_full}>
           <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
-            {team_id ? <h2><a style={{ 'textDecoration': 'none', 'color': 'black' }} href={`/team/${team_id}`}>{name_display_full}</a></h2> : <h2>{name_display_full}</h2>}
+            {team_id ? <h2><a style={{ 'textDecoration': 'none', 'color': 'black' }} href={`/${Team}`}>{name_display_full}</a></h2> : <h2>{name_display_full}</h2>}
             <img style={{ 'height': '250px', 'width': '250px' }} src={logo} alt='Team Logo' />
           </div>
         </Card>

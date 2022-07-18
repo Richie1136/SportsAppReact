@@ -14,8 +14,7 @@ const PlayerDetails = () => {
 
   let results = `http://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&${obj}`
   console.log(results)
-  const today = new Date();
-  const year = today.getFullYear();
+
 
 
 
@@ -23,10 +22,8 @@ const PlayerDetails = () => {
     const playerData = async () => {
       try {
         const response = await fetch(results)
-        console.log(response)
         const playerInfo = await response.json()
         let base = playerInfo?.player_info?.queryResults.row
-        console.log(response)
         console.log(playerInfo)
         setPlayerInfo(base)
       } catch (error) {
@@ -44,7 +41,9 @@ const PlayerDetails = () => {
         <Card >
           <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
             {playerInfo?.college ? <h2 style={{ 'width': '280px' }}>College: {playerInfo.college}</h2> : <h2>No College</h2>}
-            <h4>{playerInfo?.age}</h4>
+            <h4>Age: {playerInfo?.age}</h4>
+            <h6>Throws: {playerInfo?.throws}</h6>
+            <h5>Bats: {playerInfo?.bats}</h5>
           </div>
         </Card>
       </div>
