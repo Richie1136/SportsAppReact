@@ -107,8 +107,6 @@ const TeamDetails = () => {
 
   const term = obj.get('Team')
 
-  // let result = `${baseurlPlayer}/Players/NYY?key=${APIKEY}`
-
   let results = `${baseurlPlayer}/Players/${term}?key=${APIKEY}`
   console.log(results)
 
@@ -119,8 +117,8 @@ const TeamDetails = () => {
         const response = await fetch(results)
         let teamInfo = await response.json()
         // let base =
-        console.log(response)
-        console.log(teamInfo)
+        // console.log(response)
+        // console.log(teamInfo)
         // console.log(playerInfo)
         setTeamInfo(teamInfo)
         // let base = playerInfo?.player_info?.queryResults.row
@@ -131,18 +129,18 @@ const TeamDetails = () => {
     }
     teamData()
   }, [])
+
+  let active = teamInfo?.filter((status) => status.Status === 'Active')
+  console.log(active)
+
   return (
     <>
       <div style={{ 'display': 'flex', 'flexWrap': 'wrap', 'justifyContent': 'space-evenly' }}>
-        {teamInfo?.map(({ FirstName, MLBAMID, Status }) => (
-          <Card key={MLBAMID}>
+        {active?.map(({ FirstName, MLBAMID, LastName }) => (
+          <Card key={MLBAMID} >
             <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
-              {console.log(FirstName)}
-              {Status}
-              <h2>{FirstName}</h2>{FirstName}
-              {/* {name_display_first_last && <h2><a style={{ 'textDecoration': 'none', 'color': 'black' }} href={`/player/${player_id}`}>{name_display_first_last}</a></h2>} */}
+              <h2>{FirstName} {LastName}</h2>
             </div>
-            <h2>Apple</h2>
           </Card>
         ))
         }
