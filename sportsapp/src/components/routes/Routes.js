@@ -7,7 +7,7 @@ import Home from '../Home/Home'
 import NotFound from '../NotFound/NotFound';
 import Navigation from '../Navigation/Navigation'
 import TeamDetails from '../teamdetails/TeamDetails';
-import PlayerDetails from '../../playerdetails/PlayerDetails';
+import PlayerDetails from '../playerdetails/PlayerDetails'
 
 const AllRoutes = () => (
   <>
@@ -17,7 +17,7 @@ const AllRoutes = () => (
       <Route path='/team' element={<Team />} />
       <Route path='/team/:team_id' element={<TeamDetails />} />
       <Route path='/player' element={<Player />} />
-      <Route path='/player/:PlayerID' element={<PlayerDetails />} />
+      <Route path='/player/:player_id' element={<PlayerDetails />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   </>
