@@ -19,7 +19,6 @@ const PlayerDetails = () => {
   // const params = useParams()
 
   // const obj = new URLSearchParams(params);
-  console.log(obj.values())
 
   const term = obj.get('player_id')
 
@@ -45,13 +44,49 @@ const PlayerDetails = () => {
   }, [results])
 
 
-  let height = String(playerData?.Height / 12).split(".")
-  let whole = Number(height[0])
-  // let inches = Number(height[1])
+  let result = Number(parseFloat(playerData?.Height / 12).toFixed(1))
+  let feet = Number(result.toString().split(".")[0])
+  let inches = Number(result.toString().split(".")[1])
 
-  let inches = playerData?.Height / 12
-  console.log(whole)
-  console.log(inches)
+
+  let date = playerData?.BirthDate
+
+  date = new Date(date).toLocaleDateString().split("/")
+
+  let birthMonth = date[0] < 10 ? `0${date[0]}` : `${date[0]}`
+  let birthDay = date[1] < 10 ? `0${date[1]}` : `${date[1]}`
+  console.log(date[1])
+  let birthYear = date[2]
+
+  // let birthYear = playerData?.BirthDate.split("-")[0]
+  // console.log(birthYear)
+  // let birthMonth = playerData?.BirthDate.split("-")[1]
+  // console.log(birthMonth)
+
+  // let birthDay = playerData?.BirthDate.split("-")[2]
+  // console.log(Date(birthDay))
+
+
+  // let dateString = playerData?.BirthDate;
+  // dateString = new Date(dateString).toLocaleDateString();
+  // dateString = dateString.split('/').slice(0, 4).join(' ');
+  // console.log(dateString[0]);
+
+  // let month = dateString[0] < 10 ? `0${dateString[0]} : ${dateString[0]}`
+
+  // const format = () => {
+  //   if (dateString[0] < 10) {
+  //     console.log(`0${dateString}`)
+  //     return `0${dateString[0]}`
+  //   } else {
+  //     return `${dateString[0]}`
+  //   }
+  // }
+
+  // format()
+
+  // let born = format(dateString[0]) + dateString[1]
+  // console.log(born)
 
   return (
     <>
@@ -60,11 +95,13 @@ const PlayerDetails = () => {
           <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
             <img src={playerData?.PhotoUrl} alt='Bio Card' />
             <h1>{playerData?.FirstName} {playerData?.LastName}</h1>
-            {playerData?.college ? <h2 style={{ 'width': '280px' }}>College: {playerData.college}</h2> : <h2>No College</h2>}
+            {playerData?.College ? <h2 style={{ 'width': '280px' }}>College: {playerData?.College}</h2> : <h2>No College</h2>}
             <h4>Age: {year - playerData?.BirthDate.split("-")[0]}</h4>
             <h6>Throws: {playerData?.ThrowHand}</h6>
             <h4>Position: {playerData?.Position}</h4>
-            <h4>{playerData?.Height / 12}</h4>
+            <h4>Height: {feet}`{inches}"</h4>
+            <h4>Weight: {playerData?.Weight}</h4>
+            <h5>Born: {birthMonth}/{birthDay}/{birthYear} in {playerData?.BirthCity}, {playerData?.BirthState}</h5>
             <h5>Bat: {playerData?.Position !== "SP" || playerData?.Position !== "RP" ? playerData?.BatHand : null}</h5>
             <h4># {playerData?.Jersey}</h4>
           </div>

@@ -137,9 +137,7 @@ const TeamDetails = () => {
         {active?.map(({ FirstName, MLBAMID, LastName, PlayerID }) => (
           <Card key={MLBAMID} >
             <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
-              <h2>{FirstName} {LastName}</h2>
               {FirstName && <h2><a style={{ 'textDecoration': 'none', 'color': 'black' }} href={`/player/${PlayerID}`}>{FirstName} {LastName}</a></h2>}
-
             </div>
           </Card>
         ))
