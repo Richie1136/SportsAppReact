@@ -16,20 +16,21 @@ body {
   position: relative;
   padding: 289px 0 0;
   margin-top: 30px;
+  height: 310px;
 }
 
 .player-photo {
   border: 4px solid #0000;
   padding: 10px;
-  position: relative;
+  position: absolute;
   background-color: #ebebeb;
   z-index: 2;
   transition: 0.3s bottom;
-  left: 0;
-  margin-bottom: 40px;
+  margin-bottom: 120px;
   width: 259px;
   height: 180px;
-  top: 0;
+  top: 10%;
+  margin-left: 30px;
 }
 
 img {
@@ -45,14 +46,17 @@ img {
   height: 101px;
   width: 252px;
   bottom: 26px;
-  text-align: center;
-  margin-bottom: 50px;
+  /* text-align: center; */
+  margin-bottom: 95px;
+  margin-left: 30px;
 }
 
-.player-vitals > h1 {
+.player-vitals h1 {
   margin-bottom: 0.25rem;
-  margin-left: 20px;
-  width: 292.77px;
+  /* margin-left: 38px; */
+  width: 293px;
+  /* margin: 0 0 4px; */
+  margin-left: 42px;
 }
 
 h1 {
@@ -62,8 +66,8 @@ h1 {
 }
 
 .player-header-name {
-  width: 159.22px;
-  height: 33.5px;
+  width: 215.23px;
+  height: 45px;
   font-size: 27px;
 }
 
@@ -100,13 +104,15 @@ ul {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
-  width: 306.387px;
   height: 16px;
 }
 
-.player-vitals > ul {
+.player-vitals ul {
   min-height: 16px;
   clear: both;
+  /* margin: 0 0 16px; */
+  width: 315px;
+  margin-left: 3px;
 }
 
 li {
@@ -122,4 +128,29 @@ li {
   margin-right: 0.25rem;
   padding-right: 0.25rem;
   border-right: 1px solid #ffffff;
+  margin-left: 1px;
+}
+
+.player-bio {
+  float: left;
+  width: 30%;
+  padding-right: 1rem;
+  margin-top: -85px;
+  height: 290px;
+}
+
+.player-bio ul {
+  width: 400.9px;
+  height: 98.81px;
+}
+
+.player-bio li {
+  font-size: 0.95em;
+  width: 230.9px;
+  color: white;
+}
+
+.label {
+  font-weight: bold;
+  color: white;
 }

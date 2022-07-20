@@ -77,11 +77,28 @@ const PlayerDetails = () => {
           <ul>
             <li>{playerData?.Position}</li>
             <li>B/T: {playerData?.BatHand}/{playerData?.ThrowHand}</li>
-            <li className='player-header-height'>{feet}`{inches}"/{playerData?.Weight}</li>
+            <li className='player-header-height'>{feet}'{inches}"/{playerData?.Weight}</li>
             <li className='player-header-age'>Age: {year - playerData?.BirthDate.split("-")[0]}</li>
           </ul>
         </div>
-        {/* <Card>
+        <div className='player-bio'>
+          <ul>
+            <li>
+              <span className='label'>Born:</span>
+              {birthMonth}/{birthDay}/{birthYear} in {playerData?.BirthCity}, {playerData?.BirthState ? playerData?.BirthState : playerData?.BirthCountry}
+            </li>
+            <li>
+              <span className='label'>College:</span>
+              {playerData?.College}
+            </li>
+            <li>
+              <span className='label'>Debut:</span>
+              {proDebutMonth}/{proDebutDay}/{proDebutYear}
+            </li>
+          </ul>
+        </div>
+      </div>
+      {/* <Card>
           <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
             <h1>{playerData?.FirstName} {playerData?.LastName}</h1>
             {playerData?.College ? <h2 style={{ 'width': '280px' }}>College: {playerData?.College}</h2> : <h2>No College</h2>}
@@ -96,7 +113,6 @@ const PlayerDetails = () => {
             <h4># {playerData?.Jersey}</h4>
           </div>
         </Card> */}
-      </div>
     </>
   )
 }
