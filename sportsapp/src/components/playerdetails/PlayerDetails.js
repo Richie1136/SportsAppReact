@@ -45,9 +45,10 @@ const PlayerDetails = () => {
   }, [results])
 
 
-  let result = Number(parseFloat(playerData?.Height / 12).toFixed(1))
+  let result = Number(playerData?.Height / 12).toFixed(1)
   let feet = Number(result.toString().split(".")[0])
   let inches = Number(result.toString().split(".")[1])
+
 
 
   let date = playerData?.BirthDate
@@ -83,14 +84,14 @@ const PlayerDetails = () => {
         </div>
         <div className='player-bio'>
           <ul>
-            <li>
+            <li style={{ 'width': '285px', 'flexWrap': 'nowrap' }}>
               <span className='label'>Born:</span>
               {birthMonth}/{birthDay}/{birthYear} in {playerData?.BirthCity}, {playerData?.BirthState ? playerData?.BirthState : playerData?.BirthCountry}
             </li>
-            <li>
+            {playerData?.College !== "None" ? <li>
               <span className='label'>College:</span>
               {playerData?.College}
-            </li>
+            </li> : null}
             <li>
               <span className='label'>Debut:</span>
               {proDebutMonth}/{proDebutDay}/{proDebutYear}
