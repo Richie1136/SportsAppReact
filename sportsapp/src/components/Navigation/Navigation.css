@@ -4,6 +4,9 @@ nav {
   padding: 0 20px;
   max-width: 1200px;
   align-items: center;
+  color: purple;
+  justify-content: space-between;
+  /* margin-left: 20px; */
 }
 
 span {
@@ -11,14 +14,21 @@ span {
   width: 100%;
   max-width: 1200px;
   padding-right: 10px;
-}
-
-.home {
-  display: flex;
-  justify-content: flex-start;
-}
-
-a {
-  display: flex;
   justify-content: center;
+}
+
+/* span .player {
+  position: fixed;
+  color: red;
+  width: 54.14px;
+  height: 23.13px;
+  right: 10;
+} */
+
+/* nav span {
+  list-style: none;
+} */
+
+nav a {
+  text-decoration: none;
 }

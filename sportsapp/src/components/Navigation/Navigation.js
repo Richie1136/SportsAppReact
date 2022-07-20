@@ -6,13 +6,11 @@ const Navigation = () => {
     <div className='nav'>
       <nav>
         <NavLink to='/'>
-          <span className='league'>Home</span>
+          <span>Home</span>
         </NavLink>
-        <span>|</span>
         <NavLink to='/team'>
           <span>Team</span>
         </NavLink>
-        <span>|</span>
         <NavLink to='/player'>
           <span>Player</span>
         </NavLink>
