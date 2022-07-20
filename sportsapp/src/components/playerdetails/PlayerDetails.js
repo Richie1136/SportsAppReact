@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Card from '../card/Card'
 import { useParams } from 'react-router-dom'
 import { baseURL, baseurlPlayer, APIKEY } from '../../api/Api'
+import './PlayerDetails.css'
 
 
 
@@ -55,45 +56,33 @@ const PlayerDetails = () => {
 
   let birthMonth = date[0] < 10 ? `0${date[0]}` : `${date[0]}`
   let birthDay = date[1] < 10 ? `0${date[1]}` : `${date[1]}`
-  console.log(date[1])
   let birthYear = date[2]
 
-  // let birthYear = playerData?.BirthDate.split("-")[0]
-  // console.log(birthYear)
-  // let birthMonth = playerData?.BirthDate.split("-")[1]
-  // console.log(birthMonth)
+  let proDebut = playerData?.ProDebut
+  proDebut = new Date(proDebut).toLocaleDateString().split("/")
+  let proDebutMonth = proDebut[0] < 10 ? `0${proDebut[0]}` : `${proDebut[0]}`
+  let proDebutDay = proDebut[1] < 10 ? `0${proDebut[1]}` : `${proDebut[1]}`
+  let proDebutYear = proDebut[2]
 
-  // let birthDay = playerData?.BirthDate.split("-")[2]
-  // console.log(Date(birthDay))
-
-
-  // let dateString = playerData?.BirthDate;
-  // dateString = new Date(dateString).toLocaleDateString();
-  // dateString = dateString.split('/').slice(0, 4).join(' ');
-  // console.log(dateString[0]);
-
-  // let month = dateString[0] < 10 ? `0${dateString[0]} : ${dateString[0]}`
-
-  // const format = () => {
-  //   if (dateString[0] < 10) {
-  //     console.log(`0${dateString}`)
-  //     return `0${dateString[0]}`
-  //   } else {
-  //     return `${dateString[0]}`
-  //   }
-  // }
-
-  // format()
-
-  // let born = format(dateString[0]) + dateString[1]
-  // console.log(born)
 
   return (
     <>
-      <div style={{ 'display': 'flex', 'flexWrap': 'wrap', 'justifyContent': 'space-evenly' }}>
-        <Card>
+      <div className='player-header'>
+        <img className='player-photo' src={playerData?.PhotoUrl} alt='Bio Card' />
+        <div className='player-vitals'>
+          <h1>
+            <span className='player-header-name'>{playerData?.FirstName} {playerData?.LastName}</span>
+            <span className='player-header-number'>#{playerData?.Jersey}</span>
+          </h1>
+          <ul>
+            <li>{playerData?.Position}</li>
+            <li>B/T: {playerData?.BatHand}/{playerData?.ThrowHand}</li>
+            <li className='player-header-height'>{feet}`{inches}"/{playerData?.Weight}</li>
+            <li className='player-header-age'>Age: {year - playerData?.BirthDate.split("-")[0]}</li>
+          </ul>
+        </div>
+        {/* <Card>
           <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
-            <img src={playerData?.PhotoUrl} alt='Bio Card' />
             <h1>{playerData?.FirstName} {playerData?.LastName}</h1>
             {playerData?.College ? <h2 style={{ 'width': '280px' }}>College: {playerData?.College}</h2> : <h2>No College</h2>}
             <h4>Age: {year - playerData?.BirthDate.split("-")[0]}</h4>
@@ -101,11 +90,12 @@ const PlayerDetails = () => {
             <h4>Position: {playerData?.Position}</h4>
             <h4>Height: {feet}`{inches}"</h4>
             <h4>Weight: {playerData?.Weight}</h4>
-            <h5>Born: {birthMonth}/{birthDay}/{birthYear} in {playerData?.BirthCity}, {playerData?.BirthState}</h5>
+            <h5>Born: {birthMonth}/{birthDay}/{birthYear} in {playerData?.BirthCity}, {playerData?.BirthState ? playerData?.BirthState : playerData?.BirthCountry}</h5>
+            <h5>Pro Debut: {proDebutMonth}/{proDebutDay}/{proDebutYear}</h5>
             <h5>Bat: {playerData?.Position !== "SP" || playerData?.Position !== "RP" ? playerData?.BatHand : null}</h5>
             <h4># {playerData?.Jersey}</h4>
           </div>
-        </Card>
+        </Card> */}
       </div>
     </>
   )
