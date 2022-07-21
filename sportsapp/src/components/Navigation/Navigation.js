@@ -4,17 +4,19 @@ import './Navigation.css'
 const Navigation = () => {
   return (
     <div className='nav'>
-      <nav>
-        <NavLink to='/'>
-          <span>Home</span>
-        </NavLink>
+      <NavLink to='/'>
+        <span>Home</span>
+      </NavLink>
+      <div className='nav-center'>
         <NavLink to='/team'>
           <span>Team</span>
         </NavLink>
+      </div>
+      <div className='nav-right'>
         <NavLink to='/player'>
           <span>Player</span>
         </NavLink>
-      </nav>
+      </div>
     </div>
   )
 }
