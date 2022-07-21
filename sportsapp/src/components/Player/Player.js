@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { baseurlPlayer, APIKEY } from '../../api/Api'
 import Card from '../card/Card'
 import './Player.css'
+import Loading from '../loading/Loading'
 
 
 // const Player = () => {
@@ -71,6 +72,7 @@ const Player = () => {
   let result = `${baseurlPlayer}/Players?key=${APIKEY}`
 
   const [getdetails, setDetails] = useState()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getPlayerDetails = async () => {
@@ -79,12 +81,16 @@ const Player = () => {
         let data = await response.json()
         let playerInfo = data?.map((item) => item.Team)
         setDetails(data)
+        setLoading(false)
       } catch (error) {
         console.log(error)
       }
     }
     getPlayerDetails()
   }, [])
+
+  if (loading) return <Loading />
+
 
 
   let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -116,15 +122,15 @@ const Player = () => {
   return (
     <div>
       {filterByLast?.map(({ PhotoUrl, PlayerID, active, FirstName, LastName, Team }) => (
-        <>
-          <div key={PlayerID} className='player-links'>
+        <div key={PlayerID}>
+          <div className='player-links'>
             <ul className='player-list'>
               <li className='item'>
                 <a className='player-link' href={`/player/${PlayerID}`}>{FirstName} {LastName}</a>
               </li>
             </ul>
           </div>
-        </>
+        </div>
       ))}
     </div>
   )
