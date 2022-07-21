@@ -85,35 +85,20 @@ const PlayerDetails = () => {
         <div className='player-bio'>
           <ul>
             <li style={{ 'width': '285px', 'flexWrap': 'nowrap' }}>
-              <span className='label'>Born:</span>
+              <span className='label'>Born: </span>
               {birthMonth}/{birthDay}/{birthYear} in {playerData?.BirthCity}, {playerData?.BirthState ? playerData?.BirthState : playerData?.BirthCountry}
             </li>
             {playerData?.College !== "None" ? <li>
-              <span className='label'>College:</span>
+              <span className='label'>College: </span>
               {playerData?.College}
             </li> : null}
             <li>
-              <span className='label'>Debut:</span>
+              <span className='label'>Debut: </span>
               {proDebutMonth}/{proDebutDay}/{proDebutYear}
             </li>
           </ul>
         </div>
       </div>
-      {/* <Card>
-          <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
-            <h1>{playerData?.FirstName} {playerData?.LastName}</h1>
-            {playerData?.College ? <h2 style={{ 'width': '280px' }}>College: {playerData?.College}</h2> : <h2>No College</h2>}
-            <h4>Age: {year - playerData?.BirthDate.split("-")[0]}</h4>
-            <h6>Throws: {playerData?.ThrowHand}</h6>
-            <h4>Position: {playerData?.Position}</h4>
-            <h4>Height: {feet}`{inches}"</h4>
-            <h4>Weight: {playerData?.Weight}</h4>
-            <h5>Born: {birthMonth}/{birthDay}/{birthYear} in {playerData?.BirthCity}, {playerData?.BirthState ? playerData?.BirthState : playerData?.BirthCountry}</h5>
-            <h5>Pro Debut: {proDebutMonth}/{proDebutDay}/{proDebutYear}</h5>
-            <h5>Bat: {playerData?.Position !== "SP" || playerData?.Position !== "RP" ? playerData?.BatHand : null}</h5>
-            <h4># {playerData?.Jersey}</h4>
-          </div>
-        </Card> */}
     </>
   )
 }

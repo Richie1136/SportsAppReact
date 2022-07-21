@@ -6,7 +6,6 @@ import Navigation from './components/Navigation/Navigation'
 import AllRoutes from './components/routes/Routes';
 import { useState } from 'react'
 import { Get40manRoster } from './config'
-import Home from './components/Home/Home';
 import { fetchTeams } from './api/Api';
 
 const App = () => {

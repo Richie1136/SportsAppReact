@@ -1,4 +1,3 @@
-
 import Card from '../card/Card'
 import teamData from '../../teams.json'
 
