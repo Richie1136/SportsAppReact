@@ -11,10 +11,6 @@ const Standings = () => {
     setToggle(!toggle)
   }
 
-  // let NL = teamData?.queryResults.row.filter((team) => team.league_full === 'National League')
-  // let AL = teamData?.queryResults.row.filter((team) => team.league_full === 'American League')
-
-
 
   let results = `${baseurlPlayer}/Standings/2022?key=${APIKEY}`
   // console.log(results)
@@ -46,13 +42,11 @@ const Standings = () => {
 
   let result = toggle ? NL : AL
 
-  // let result = standings?.Percentage
-
 
   return (
     <>
       <table style={{ 'marginTop': '15px', 'position': 'relative', 'float': 'left', 'marginLeft': '20px' }}>
-        {AL?.map(({ Wins, Losses, Name, Percentage, Division }) => (
+        {AL?.map(({ Wins, Losses, Name, Percentage, Division, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, Streak, RunsScored, RunsAgainst }) => (
           <>
             <tbody>
               <tr>
@@ -60,6 +54,13 @@ const Standings = () => {
                 <th>W</th>
                 <th>L</th>
                 <th>PCT</th>
+                <th>GB</th>
+                <th>WCGB</th>
+                <th>L10</th>
+                <th>STRK</th>
+                <th>RS</th>
+                <th>RA</th>
+                <th>DIFF</th>
               </tr>
             </tbody>
             <tbody>
@@ -68,14 +69,21 @@ const Standings = () => {
                 <td>{Wins}</td>
                 <td>{Losses}</td>
                 <td>{"." + Percentage.toFixed(3).split(".")[1]}</td>
+                <td style={{ 'textAlign': 'center' }}>{GamesBehind === 0 ? '-' : GamesBehind}</td>
+                <td style={{ 'textAlign': 'right' }}>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}</td>
+                <td>{LastTenGamesWins}-{LastTenGamesLosses}</td>
+                <td>{Streak}</td>
+                <td>{RunsScored}</td>
+                <td>{RunsAgainst}</td>
+                <td>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}</td>
               </tr>
             </tbody>
           </>
         ))
         }
       </table>
-      <table style={{ 'float': 'right', 'position': 'relative', 'marginTop': '15px', 'marginRight': '20px' }}>
-        {NL?.map(({ Wins, Losses, Name, Percentage, Division }) => (
+      <table style={{ 'float': 'right', 'position': 'relative', 'marginTop': '15px', 'marginRight': '70px' }}>
+        {NL?.map(({ Wins, Losses, Name, Percentage, Division, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, Streak, RunsScored, RunsAgainst }) => (
           <>
             <tbody>
               <tr>
@@ -83,6 +91,13 @@ const Standings = () => {
                 <th>W</th>
                 <th>L</th>
                 <th>PCT</th>
+                <th>GB</th>
+                <th>WCGB</th>
+                <th>L10</th>
+                <th>STRK</th>
+                <th>RS</th>
+                <th>RA</th>
+                <th>DIFF</th>
               </tr>
             </tbody>
             <tbody>
@@ -91,6 +106,13 @@ const Standings = () => {
                 <td>{Wins}</td>
                 <td>{Losses}</td>
                 <td>{"." + Percentage.toFixed(3).split(".")[1]}</td>
+                <td style={{ 'textAlign': 'center' }}>{GamesBehind === 0 ? '-' : GamesBehind}</td>
+                <td style={{ 'textAlign': 'right' }}>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}</td>
+                <td>{LastTenGamesWins}-{LastTenGamesLosses}</td>
+                <td>{Streak}</td>
+                <td>{RunsScored}</td>
+                <td>{RunsAgainst}</td>
+                <td>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}</td>
               </tr>
             </tbody>
           </>
