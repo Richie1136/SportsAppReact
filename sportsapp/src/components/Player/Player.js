@@ -5,75 +5,27 @@ import './Player.css'
 import Loading from '../loading/Loading'
 
 
-// const Player = () => {
-//   let result = `${baseurlPlayer}/Players?key=${APIKEY}`
-
-//   // let teams = getPlayers?.map((team) => team)
-//   // let playerOfYeasm = `${baseurlPlayer}/Players/${teams}`
-
-
-//   const [getPlayers, setGetPlayers] = useState()
-
-//   useEffect(() => {
-//     const getPlayerDetails = async () => {
-//       try {
-//         let teams = getPlayers?.map((team) => team)
-//         let playerOfYeasm = `${baseurlPlayer}/Players/${teams}`
-//         console.log(playerOfYeasm)
-//         const response = await fetch(playerOfYeasm)
-//         let data = await response.json()
-//         let playerInfo = data?.map((item) => item)
-//         console.log(playerInfo)
-//         setGetPlayers(data)
-//       } catch (error) {
-//         console.log(error)
-//       }
-//     }
-//     getPlayerDetails()
-//   }, [])
-
-
-//   let active = getPlayers?.filter((status) => status.Status === 'Active' && status.Team === 'ARI')
-//   // let team = getdetails?.map((team) => team.Team)
-//   // setDetails(active)
-
-//   console.log(active)
-
-//   // console.log(getdetails?.map((team) => team.Team))
-
-
-//   // console.log(playerOfYeasm)
-
-
-//   return (
-//     <div style={{ 'display': 'flex', 'flexWrap': 'wrap' }}>
-//       {getPlayers?.map(({ PhotoUrl, PlayerID, active, FirstName, LastName, Status }) => (
-//         <>
-//           <Card >
-//             <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
-//               <img src={PhotoUrl} />
-//               <h4>{FirstName} {LastName}</h4>
-//               {active}
-//             </div>
-//           </Card>
-//         </>
-//       ))}
-//     </div>
-//   )
-// }
-
-// export default Player
-
-
-
-
 const Player = () => {
 
   let result = `${baseurlPlayer}/Players?key=${APIKEY}`
 
   const [getdetails, setDetails] = useState()
+  const [lastNae, setLastName] = useState()
   const [loading, setLoading] = useState(true)
 
+  let filteredLast = {
+    A: getdetails?.filter((status) => status.LastName.startsWith('A')).map((item) => item),
+    B: getdetails?.filter((status) => status.LastName.startsWith('B')).map((item) => item).filter((role) => role.Status === 'Active'),
+    C: getdetails?.filter((status) => status.LastName.startsWith('C')).map((item) => item).filter((role) => role.Status === 'Active'),
+    D: getdetails?.filter((status) => status.LastName.startsWith('D')).map((item) => item).filter((role) => role.Status === 'Active'),
+    E: getdetails?.filter((status) => status.LastName.startsWith('E')),
+    F: getdetails?.filter((status) => status.LastName.startsWith('F')),
+    G: getdetails?.filter((status) => status.LastName.startsWith('G')),
+  }
+
+  // console.log(filteredLast.A)
+
+  let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
   useEffect(() => {
     const getPlayerDetails = async () => {
       try {
@@ -81,6 +33,9 @@ const Player = () => {
         let data = await response.json()
         let playerInfo = data?.map((item) => item.Team)
         setDetails(data)
+        let filterLastName = letters.forEach((letter) => getdetails?.filter((status) => status.LastName.startsWith(letter)))
+        // let results = letters?.forEach((letter) => filteredLast[letter])
+        console.log(filterLastName)
         setLoading(false)
       } catch (error) {
         console.log(error)
@@ -91,37 +46,92 @@ const Player = () => {
 
   if (loading) return <Loading />
 
+  console.log(Object.keys(filteredLast).forEach((letter) => console.log(letter.split(""))))
 
 
-  let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  let cherry = Object.keys(filteredLast).forEach((letter) => console.log(letter.split("").value))
+
+  console.log(JSON.stringify(Object.keys(filteredLast)))
 
   // let mapovrtletters = letters.map((letter) => console.log(letter))
 
   let filterByLast = getdetails?.filter((status) => status.LastName.toLowerCase().startsWith('a')).filter((role) => role.Status === 'Active')
 
-
-
-
-  // let filterLastName = letters.forEach((letter) => filteredLast[letter] = getdetails?.filter((status) => status.LastName.toLowerCase().startsWith(letter)))
-
-  let filteredLast = {
-    a: getdetails?.filter((status) => status.LastName.toLowerCase().startsWith('a')),
-    b: getdetails?.filter((status) => status.LastName.toLowerCase().startsWith('b')),
-    c: getdetails?.filter((status) => status.LastName.toLowerCase().startsWith('c')),
-    d: getdetails?.filter((status) => status.LastName.toLowerCase().startsWith('d')),
-    e: getdetails?.filter((status) => status.LastName.toLowerCase().startsWith('e')),
-    f: getdetails?.filter((status) => status.LastName.toLowerCase().startsWith('f')),
-    g: getdetails?.filter((status) => status.LastName.toLowerCase().startsWith('g')),
-  }
-
-  // console.log(getdetails?.filter((status) => status.LastName.toLowerCase().startsWith(mapovrtletters)))
-
-  let filterLastName = letters.forEach((letter) => filteredLast[letter] = getdetails?.filter((status) => status.LastName.toLowerCase().startsWith(letter)))
   console.log(filterByLast)
+
+
+
+  // console.log(filterLastName)
+  let A = getdetails?.filter((status) => status.LastName.startsWith('A')).map((item) => item.LastName)
+  let B = getdetails?.filter((status) => status.LastName.startsWith('B')).map((item) => item.LastName)
+  let C = getdetails?.filter((status) => status.LastName.startsWith('C'))
+  let D = getdetails?.filter((status) => status.LastName.startsWith('D'))
+  let E = getdetails?.filter((status) => status.LastName.startsWith('E'))
+  let F = getdetails?.filter((status) => status.LastName.startsWith('F'))
+  let G = getdetails?.filter((status) => status.LastName.startsWith('G'))
+
+  let alpha = A
+  // console.log(alpha.map((name) => name.split(",")))
+
+  // let filteredLast2 = {
+  //   A: getdetails?.filter((status) => status.LastName.startsWith('A')).map((item) => item),
+  //   B: getdetails?.filter((status) => status.LastName.startsWith('B')),
+  //   C: getdetails?.filter((status) => status.LastName.startsWith('C')),
+  //   D: getdetails?.filter((status) => status.LastName.startsWith('D')),
+  //   E: getdetails?.filter((status) => status.LastName.startsWith('E')),
+  //   F: getdetails?.filter((status) => status.LastName.startsWith('F')),
+  //   G: getdetails?.filter((status) => status.LastName.startsWith('G')),
+  // }
+
+  // let letters2 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+
+  // letters2.forEach((letter) => console.log(filteredLast[letter]))
+
+
+  // let results = getdetails?.filter((status) => status.LastName).letters2?.forEach((letter) => letter.LastName.startsWith(filteredLast2[letter]))
+  // console.log(results)
+
+  // let results = letters2?.forEach((letter) => letter.LastName.startsWith(filteredLast2[letter]).filter((role) => role.Status === 'Active'))
+  // console.log(results)
+
+  // console.log(filteredLast.A)
+
+  let a = filteredLast.A
+  // console.log(a.map((item) => console.log(item.LastName)))
+
+  // console.log(JSON.parse(filteredLast))
+
+  // console.log(filteredLast.A.map((item) => console.log(item.LastName)))
+
+  // console.log(filteredLast)
+
+  // console.log(filteredLast.map((key) => console.log(key.key)))
+
+  // console.log(Object.entries(filteredLast?.map((item) => console.log(item[1]))))
+
+  // let keys = Object.keys(filteredLast)
+  // console.log(keys.map((letter) => console.log(letter)))
+
+  // for (const [key, value] of filteredLast) {
+  //   console.log(`${key}:${value}`);
+  // }
+
+  // let apple = filteredLast?.map((item) => item.LastName)
+  // console.log(apple)
+
+  // let last = Object.entries(filteredLast)
+  // console.log(last[1].map((item) => console.log(item.Last)))
+
+  // let filterLastName = letters.forEach((letter) => filteredLast[letter])
+
 
   return (
     <div>
-      {filterByLast?.map(({ PhotoUrl, PlayerID, active, FirstName, LastName, Team }) => (
+      {/* {filteredLast} */}
+      {/* {apple} */}
+
+      {a.map(({ PlayerID, active, FirstName, LastName, Team }) => (
         <div key={PlayerID}>
           <div className='player-links'>
             <ul className='player-list'>
@@ -132,6 +142,16 @@ const Player = () => {
           </div>
         </div>
       ))}
+      {/* <div key={filteredLast.A.PlayerID}>
+        <div className='player-links'>
+          <ul className='player-list'>
+            <li className='item'>
+              <a className='player-link' href={`/player/${filteredLast.A.PlayerID}`}>{filteredLast.A.FirstName} {filteredLast.A.LastName}</a>
+            </li>
+          </ul>
+        </div>
+      </div> */}
+      {/* {filteredLast?.FirstName} */}
     </div>
   )
 }

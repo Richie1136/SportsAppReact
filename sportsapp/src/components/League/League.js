@@ -5,7 +5,7 @@ import './League.css'
 import teamData from '../../teams.json'
 
 
-// 2 Buttons one that when clicked shows the AL Teams and another that shows the NL when clicked
+// Toggle Button that when clicked shows the AL Teams and another that shows the NL when clicked
 
 const League = ({ team }) => {
 
@@ -19,8 +19,6 @@ const League = ({ team }) => {
   let AL = teamData?.queryResults.row.filter((team) => team.league_full === 'American League')
 
   let result = toggle ? NL : AL
-
-  console.log(result)
 
   return (
     <div className='league'>

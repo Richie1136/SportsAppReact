@@ -15,12 +15,6 @@ const PlayerDetails = () => {
 
   const obj = new URLSearchParams(params);
 
-  // let results = `http://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&${obj}`
-  // let results = https://api.sportsdata.io/v3/mlb/scores/json/Player/10000381
-  // const params = useParams()
-
-  // const obj = new URLSearchParams(params);
-
   const term = obj.get('player_id')
 
   let results = `${baseurlPlayer}/Player/${term}?key=${APIKEY}`

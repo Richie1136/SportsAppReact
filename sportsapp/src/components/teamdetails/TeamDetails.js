@@ -114,13 +114,7 @@ const TeamDetails = () => {
       try {
         const response = await fetch(results)
         let teamInfo = await response.json()
-        // let base =
-        // console.log(response)
-        // console.log(teamInfo)
-        // console.log(playerInfo)
         setTeamInfo(teamInfo)
-        // let base = playerInfo?.player_info?.queryResults.row
-        // setTeamInfo(base)
       } catch (error) {
         console.log(error)
       }

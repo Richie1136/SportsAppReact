@@ -11,6 +11,9 @@ const Navigation = () => {
         <NavLink to='/team'>
           <span>Team</span>
         </NavLink>
+        <NavLink to='/standings'>
+          <span>Standings</span>
+        </NavLink>
       </div>
       <div className='nav-right'>
         <NavLink to='/player'>
