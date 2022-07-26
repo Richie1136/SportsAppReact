@@ -1,6 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
 .Positive {
   color: #24a133;
 }
 .Negative {
   color: #d50032;
+}
+
+.table {
+  width: 990px;
+}
+
+.division-row {
+  width: 990px;
+  height: 32px;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.division-name {
+  width: 170px;
+  height: 32px;
+  color: #ffffff;
+  font-size: 12px;
+  background-color: #041e42;
+  padding: 0 16px;
+}
+
+span {
+  width: 136.5px;
+  height: 18px;
+}
+
+th span {
+  display: block;
+}
+
+.division-title {
+  height: 18px;
+  display: inline-block;
+}
+
+.division-name span {
+  text-align: left;
 }
