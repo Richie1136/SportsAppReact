@@ -43,12 +43,36 @@ const Standings = () => {
 
   let headers = (
     <>
-      <th>W</th>
-      <th>L</th>
-      <th>PCT</th>
-      <th>GB</th>
-      <th>WCGB</th>
-      <th>L10</th>
+      <th className='wins'>
+        <span className='divisionspan'>
+          <span className='teamw'>W</span>
+        </span>
+      </th>
+      <th className='losses'>
+        <span className='team'>
+          <span className='teaml'>L</span>
+        </span>
+      </th>
+      <th className='pct'>
+        <span className='team'>
+          <span className='percentage'>PCT</span>
+        </span>
+      </th>
+      <th className='gb'>
+        <span className='team'>
+          <span className='tgb'>GB</span>
+        </span>
+      </th>
+      <th className='wcgb'>
+        <span className='wgb'>
+          <span className='twcgb'>WCGB</span>
+        </span>
+      </th>
+      <th className='last10'>
+        <span className=''>
+          <span className='l10'>L10</span>
+        </span>
+      </th>
       <th>STRK</th>
       <th>RS</th>
       <th>RA</th>

@@ -56,3 +56,112 @@ th span {
 .division-name span {
   text-align: left;
 }
+
+.wins {
+  width: 48px;
+  height: 32px;
+  background-color: #041e42;
+  padding: 1px 8px 1px 16px;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.division-span {
+  width: 22.5px;
+  height: 18px;
+}
+
+.teamw {
+  width: 10.59px;
+  height: 15.5px;
+}
+
+.losses {
+  width: 48px;
+  height: 32px;
+  color: #ffffff;
+  background-color: #041e42;
+  padding: 1px 8px;
+  font-size: 12px;
+}
+
+.teamsl {
+  width: 32px;
+  height: 18px;
+}
+
+.teaml {
+  width: 6.12px;
+  height: 15.5px;
+}
+
+.pct {
+  width: 48px;
+  height: 32px;
+  font-size: 12px;
+  background-color: #041e42;
+  padding: 1px 8px;
+  color: #ffffff;
+}
+
+.teamper {
+  width: 32px;
+  height: 18px;
+}
+
+.percentage {
+  width: 21.99px;
+  height: 15.5px;
+}
+
+.gb {
+  width: 48px;
+  height: 32px;
+  color: #ffffff;
+  background-color: #041e42;
+  font-size: 12px;
+  padding: 1px 8px;
+}
+
+.tgb {
+  width: 16.1px;
+  height: 15.5px;
+}
+
+.wcgb {
+  width: 48px;
+  height: 32px;
+  font-size: 12px;
+  color: #ffffff;
+  background-color: #041e42;
+  padding: 1px 16px 1px 8px;
+}
+
+.wgb {
+  width: 24px;
+  height: 18px;
+}
+
+.twcgb {
+  width: 34.57px;
+  height: 15.5px;
+}
+
+.last10 {
+  width: 48px;
+  height: 32px;
+  font-size: 12px;
+  background-color: #041e42;
+  color: #ffffff;
+  padding: 1px 8px;
+}
+
+.las10 {
+  width: 32px;
+  height: 18px;
+}
+
+.l10 {
+  width: 17.53px;
+  height: 15.5px;
+}
