@@ -4,9 +4,27 @@
 
 .Positive {
   color: #24a133;
+  width: 32.44px;
+  height: 16.5px;
 }
 .Negative {
   color: #d50032;
+  width: 32.44px;
+  height: 16.5px;
+}
+
+.rundiff {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 8px;
+}
+
+.teamrundiff {
+  width: 32.44px;
+  height: 16.5px;
 }
 
 .table {
@@ -85,11 +103,6 @@ th span {
   font-size: 12px;
 }
 
-.teamsl {
-  width: 32px;
-  height: 18px;
-}
-
 .teaml {
   width: 6.12px;
   height: 15.5px;
@@ -102,11 +115,6 @@ th span {
   background-color: #041e42;
   padding: 1px 8px;
   color: #ffffff;
-}
-
-.teamper {
-  width: 32px;
-  height: 18px;
 }
 
 .percentage {
@@ -137,11 +145,6 @@ th span {
   padding: 1px 16px 1px 8px;
 }
 
-.wgb {
-  width: 24px;
-  height: 18px;
-}
-
 .twcgb {
   width: 34.57px;
   height: 15.5px;
@@ -156,12 +159,288 @@ th span {
   padding: 1px 8px;
 }
 
-.las10 {
+.l10 {
+  width: 17.53px;
+  height: 15.5px;
+}
+
+.streak {
+  width: 48px;
+  height: 32px;
+  font-size: 12px;
+  padding: 1px 16px 1px 8px;
+  background-color: #041e42;
+  color: #ffffff;
+}
+
+.tstreak {
+  width: 24px;
+  height: 18px;
+}
+
+.teamStreak {
+  width: 28.3px;
+  height: 15.5px;
+}
+
+.rs {
+  width: 48px;
+  height: 32px;
+  color: #ffffff;
+  background-color: #041e42;
+  font-size: 12px;
+  padding: 1px 8px;
+}
+
+.trs {
+  width: 14.33px;
+  height: 15.5px;
+}
+
+.ra {
+  width: 48px;
+  height: 32px;
+  color: #ffffff;
+  background-color: #041e42;
+  font-size: 12px;
+  padding: 1px 8px;
+}
+
+.tra {
+  width: 15.19px;
+  height: 15.5px;
+}
+
+.diff {
+  width: 48px;
+  height: 32px;
+  color: #ffffff;
+  background-color: #041e42;
+  padding: 1px 8px;
+  font-size: 12px;
+}
+
+.runs {
   width: 32px;
   height: 18px;
 }
 
-.l10 {
-  width: 17.53px;
+.rd {
+  width: 24.46px;
   height: 15.5px;
+}
+
+.home {
+  width: 60px;
+  height: 32px;
+  padding: 1px 8px;
+  color: #ffffff;
+  background-color: #041e42;
+  font-size: 12px;
+}
+
+.hr {
+  width: 34.25px;
+  height: 15.5px;
+}
+
+.away {
+  width: 60px;
+  height: 32px;
+  padding: 1px 8px;
+  color: #ffffff;
+  background-color: #041e42;
+  font-size: 12px;
+}
+
+.ar {
+  width: 32.02px;
+  height: 15.5px;
+}
+
+.span {
+  width: 44px;
+  height: 18px;
+}
+
+.teamName {
+  width: 170px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0 11.2px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tn {
+  width: 146.61px;
+  height: 24px;
+}
+
+.teamData {
+  width: 81.16px;
+  height: 21.59px;
+}
+
+.teamWins {
+  width: 48px;
+  height: 32px;
+  padding: 1px 8px 1px 16px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.numofwins {
+  width: 16px;
+  height: 16.5px;
+}
+
+.teamLosses {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  padding: 1px 8px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.numofLosses {
+  width: 16.02;
+  height: 16.5px;
+}
+
+.teampercent {
+  width: 48px;
+  height: 48px;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f7f7f7;
+  padding: 1px 8px;
+}
+
+.percentage {
+  width: 28.03px;
+  height: 16.5px;
+}
+
+.gamesbehind {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 8px;
+}
+
+.gbh {
+  width: 28.03px;
+  height: 16.5px;
+}
+
+.wildcardbehind {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 16px 1px 8px;
+}
+
+.wcgbh {
+  width: 28.43px;
+  height: 16.5px;
+}
+
+.last10record {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 8px;
+}
+
+.lasttenrecord {
+  width: 20.81px;
+  height: 16.5px;
+}
+
+.teamstreak {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 16px 1px 8px;
+}
+
+.ts {
+  width: 20.81px;
+  height: 16.5px;
+}
+
+.teamRS {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 8px;
+}
+
+.teamScored {
+  width: 24.03px;
+  height: 16.5px;
+}
+
+.teamRA {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 8px;
+}
+
+.teamAllowed {
+  width: 24.03px;
+  height: 16.5px;
+}
+
+.team-home {
+  width: 60px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 8px;
+}
+
+.team-home-record {
+  width: 36.84px;
+  height: 16.5px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.team-away {
+  width: 60px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 8px;
+}
+
+.team-away-record {
+  width: 36.84px;
+  height: 16.5px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
 }

@@ -54,135 +54,260 @@ const Standings = () => {
         </span>
       </th>
       <th className='pct'>
-        <span className='team'>
+        <span className='runs'>
           <span className='percentage'>PCT</span>
         </span>
       </th>
       <th className='gb'>
-        <span className='team'>
+        <span className='runs'>
           <span className='tgb'>GB</span>
         </span>
       </th>
       <th className='wcgb'>
-        <span className='wgb'>
+        <span className='tstreak'>
           <span className='twcgb'>WCGB</span>
         </span>
       </th>
       <th className='last10'>
-        <span className=''>
+        <span className='runs'>
           <span className='l10'>L10</span>
         </span>
       </th>
-      <th>STRK</th>
-      <th>RS</th>
-      <th>RA</th>
-      <th>DIFF</th>
-      <th>Home</th>
-      <th>Away</th>
+      <th className='streak'>
+        <soan className='tstreak'>
+          <span className='teamStreak'>STRK</span>
+        </soan>
+      </th>
+      <th className='rs'>
+        <span className='runs'>
+          <span className='trs'>RS</span>
+        </span>
+      </th>
+      <th className='ra'>
+        <span className='runs'>
+          <span className='tra'>RA</span>
+        </span>
+      </th>
+      <th className='diff'>
+        <span className='runs'>
+          <span className='rd'>DIFF</span>
+        </span>
+      </th>
+      <th className='home'>
+        <span className='span'>
+          <span className='hr'>Home</span>
+        </span>
+      </th>
+      <th className='away'>
+        <span className='span'>
+          <span className='ar'>Away</span>
+        </span>
+      </th>
     </>
   )
-
-  let data = standings?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesLosses, LastTenGamesWins, Streak }) => (
-    <tr>
-      <td style={{ 'textAlign': 'center' }}>{Name}</td>
-      <td>{Wins}</td>
-      <td>{Losses}</td>
-      <td>{"." + Percentage.toFixed(3).split(".")[1]}</td>
-      <td style={{ 'textAlign': 'center' }}>{GamesBehind === 0 ? '-' : GamesBehind}</td>
-      <td style={{ 'textAlign': 'right' }}>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}</td>
-      <td>{LastTenGamesWins}-{LastTenGamesLosses}</td>
-      <td>{Streak}</td>
-      {/* <td>{RunsScored}</td>
-  <td>{RunsAgainst}</td>
-  <td className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}</td>
-  <td>{HomeWins}-{HomeLosses}</td>
-  <td>{AwayWins}-{AwayLosses}</td> */}
-    </tr>
-  ))
-
-  // const { Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses } = items
-  // console.log(standings)
 
 
 
 
   return (
     <>
-      <table className='table' style={{ 'marginTop': '15px', 'position': 'relative', 'float': 'left', 'marginLeft': '20px' }}>
-        <tbody>
-          <th>AL East</th>
-          {headers}
-          {ALE?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-            <tr>
-              <td style={{ 'textAlign': 'center' }}>{Name}</td>
-              <td>{Wins}</td>
-              <td>{Losses}</td>
-              <td>{"." + Percentage.toFixed(3).split(".")[1]}</td>
-              <td style={{ 'textAlign': 'center' }}>{GamesBehind === 0 ? '-' : GamesBehind}</td>
-              <td style={{ 'textAlign': 'right' }}>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}</td>
-              <td>{LastTenGamesWins}-{LastTenGamesLosses}</td>
-              <td>{Streak}</td>
-              <td>{RunsScored}</td>
-              <td>{RunsAgainst}</td>
-              <td className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}</td>
-              <td>{HomeWins}-{HomeLosses}</td>
-              <td>{AwayWins}-{AwayLosses}</td>
-            </tr>
-            // { data }
-          ))}
-        </tbody>
-        <br />
-        <tbody>
-          <th>AL Central</th>
-          {headers}
-          {ALC?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-            <tr>
-              <td style={{ 'textAlign': 'center' }}>{Name}</td>
-              <td>{Wins}</td>
-              <td>{Losses}</td>
-              <td>{"." + Percentage.toFixed(3).split(".")[1]}</td>
-              <td style={{ 'textAlign': 'center' }}>{GamesBehind === 0 ? '-' : GamesBehind}</td>
-              <td style={{ 'textAlign': 'right' }}>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}</td>
-              <td>{LastTenGamesWins}-{LastTenGamesLosses}</td>
-              <td>{Streak}</td>
-              <td>{RunsScored}</td>
-              <td>{RunsAgainst}</td>
-              <td className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}</td>
-              <td>{HomeWins}-{HomeLosses}</td>
-              <td>{AwayWins}-{AwayLosses}</td>
-            </tr>
-          ))}
-        </tbody>
-        <br />
-        <tbody>
-          <th>AL West</th>
-          {headers}
-          {ALW?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-            <tr>
-              <td style={{ 'textAlign': 'center' }}>{Name}</td>
-              <td>{Wins}</td>
-              <td>{Losses}</td>
-              <td>{"." + Percentage.toFixed(3).split(".")[1]}</td>
-              <td style={{ 'textAlign': 'center' }}>{GamesBehind === 0 ? '-' : GamesBehind}</td>
-              <td style={{ 'textAlign': 'right' }}>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}</td>
-              <td>{LastTenGamesWins}-{LastTenGamesLosses}</td>
-              <td>{Streak}</td>
-              <td>{RunsScored}</td>
-              <td>{RunsAgainst}</td>
-              <td className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}</td>
-              <td>{HomeWins}-{HomeLosses}</td>
-              <td>{AwayWins}-{AwayLosses}</td>
-            </tr>
-          ))}
-        </tbody>
-        <br />
-      </table>
-      <table className='table' style={{ 'position': 'relative', 'marginTop': '15px' }}>
+      <table style={{ 'position': 'relative', 'marginTop': '15px' }}>
         <colgroup style={{ 'width': '410px', 'height': '272px' }} span='6'></colgroup>
         <colgroup style={{ 'width': '272px', 'height': '96px' }} span='2'></colgroup>
         <colgroup style={{ 'width': '272px', 'height': '204px' }} span='4'></colgroup>
-        <colgroup style={{ 'width': '272', 'height': '180px' }} span='3'></colgroup>
-
+        <colgroup style={{ 'width': '272px', 'height': '180px' }} span='3'></colgroup>
+        <tbody>
+          <tr className='division-row'>
+            <th className='division-name'>
+              <span>
+                <span className='division-title'>AL East</span>
+              </span>
+            </th>
+            {headers}
+          </tr>
+        </tbody>
+        {ALE?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
+          <tbody>
+            <tr style={{ 'width': '990px', 'height': '48px' }}>
+              <td className='teamName'>
+                <span className='tn'>
+                  <span className='teamData'>{Name}</span>
+                </span>
+              </td>
+              <td className='teamWins'>
+                <span className='numofwins'>{Wins}</span>
+              </td>
+              <td className='teamLosses'>
+                <span className='numofLosses'>{Losses}</span>
+              </td>
+              <td className='teampercent'>
+                <span className='percentage'>{"." + Percentage.toFixed(3).split(".")[1]}</span>
+              </td>
+              <td className='gamesbehind'>
+                <span className='gbh'>{GamesBehind === 0 ? '-' : GamesBehind}</span>
+              </td>
+              <td className='wildcardbehind'>
+                <span className='wcgbh'>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}
+                </span>
+              </td>
+              <td className='last10record'>
+                <span className='lasttenrecord'>{LastTenGamesWins}-{LastTenGamesLosses}</span>
+              </td>
+              <td className='teamstreak'>
+                <span className='ts'>{Streak}</span>
+              </td>
+              <td className='teamRS'>
+                <span className='teamScored'>{RunsScored}</span>
+              </td>
+              <td className='teamRA'>
+                <span className='teamAllowed'>{RunsAgainst}</span>
+              </td>
+              <td className='rundiff'>
+                <span className='teamrundiff'>
+                  <span className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}
+                  </span>
+                </span>
+              </td>
+              <td className='team-home'>
+                <span className='team-home-record'>{HomeWins}-{HomeLosses}</span>
+              </td>
+              <td className='team-away'>
+                <span className='team-away-record'>{AwayWins}-{AwayLosses}</span>
+              </td>
+            </tr>
+          </tbody>
+        ))}
+        <br />
+        <tbody>
+          <tr className='division-row'>
+            <th className='division-name'>
+              <span>
+                <span className='division-title'>AL Central</span>
+              </span>
+            </th>
+            {headers}
+          </tr>
+        </tbody>
+        {ALC?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
+          <tbody>
+            <tr style={{ 'width': '990px', 'height': '48px' }}>
+              <td className='teamName'>
+                <span className='tn'>
+                  <span className='teamData'>{Name}</span>
+                </span>
+              </td>
+              <td className='teamWins'>
+                <span className='numofwins'>{Wins}</span>
+              </td>
+              <td className='teamLosses'>
+                <span className='numofLosses'>{Losses}</span>
+              </td>
+              <td className='teampercent'>
+                <span className='percentage'>{"." + Percentage.toFixed(3).split(".")[1]}</span>
+              </td>
+              <td className='gamesbehind'>
+                <span className='gbh'>{GamesBehind === 0 ? '-' : GamesBehind}</span>
+              </td>
+              <td className='wildcardbehind'>
+                <span className='wcgbh'>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}
+                </span>
+              </td>
+              <td className='last10record'>
+                <span className='lasttenrecord'>{LastTenGamesWins}-{LastTenGamesLosses}</span>
+              </td>
+              <td className='teamstreak'>
+                <span className='ts'>{Streak}</span>
+              </td>
+              <td className='teamRS'>
+                <span className='teamScored'>{RunsScored}</span>
+              </td>
+              <td className='teamRA'>
+                <span className='teamAllowed'>{RunsAgainst}</span>
+              </td>
+              <td className='rundiff'>
+                <span className='teamrundiff'>
+                  <span className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}
+                  </span>
+                </span>
+              </td>
+              <td className='team-home'>
+                <span className='team-home-record'>{HomeWins}-{HomeLosses}</span>
+              </td>
+              <td className='team-away'>
+                <span className='team-away-record'>{AwayWins}-{AwayLosses}</span>
+              </td>
+            </tr>
+          </tbody>
+        ))}
+        <br />
+        <tbody>
+          <tr className='division-row'>
+            <th className='division-name'>
+              <span>
+                <span className='division-title'>AL West</span>
+              </span>
+            </th>
+            {headers}
+          </tr>
+        </tbody>
+        {ALW?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
+          <tbody>
+            <tr style={{ 'width': '990px', 'height': '48px' }}>
+              <td className='teamName'>
+                <span className='tn'>
+                  <span className='teamData'>{Name}</span>
+                </span>
+              </td>
+              <td className='teamWins'>
+                <span className='numofwins'>{Wins}</span>
+              </td>
+              <td className='teamLosses'>
+                <span className='numofLosses'>{Losses}</span>
+              </td>
+              <td className='teampercent'>
+                <span className='percentage'>{"." + Percentage.toFixed(3).split(".")[1]}</span>
+              </td>
+              <td className='gamesbehind'>
+                <span className='gbh'>{GamesBehind === 0 ? '-' : GamesBehind}</span>
+              </td>
+              <td className='wildcardbehind'>
+                <span className='wcgbh'>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}
+                </span>
+              </td>
+              <td className='last10record'>
+                <span className='lasttenrecord'>{LastTenGamesWins}-{LastTenGamesLosses}</span>
+              </td>
+              <td className='teamstreak'>
+                <span className='ts'>{Streak}</span>
+              </td>
+              <td className='teamRS'>
+                <span className='teamScored'>{RunsScored}</span>
+              </td>
+              <td className='teamRA'>
+                <span className='teamAllowed'>{RunsAgainst}</span>
+              </td>
+              <td className='rundiff'>
+                <span className='teamrundiff'>
+                  <span className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}
+                  </span>
+                </span>
+              </td>
+              <td className='team-home'>
+                <span className='team-home-record'>{HomeWins}-{HomeLosses}</span>
+              </td>
+              <td className='team-away'>
+                <span className='team-away-record'>{AwayWins}-{AwayLosses}</span>
+              </td>
+            </tr>
+          </tbody>
+        ))}
+        <br />
+      </table>
+      <table style={{ 'position': 'relative', 'marginTop': '15px' }}>
+        <colgroup style={{ 'width': '410px', 'height': '272px' }} span='6'></colgroup>
+        <colgroup style={{ 'width': '272px', 'height': '96px' }} span='2'></colgroup>
+        <colgroup style={{ 'width': '272px', 'height': '204px' }} span='4'></colgroup>
+        <colgroup style={{ 'width': '272px', 'height': '180px' }} span='3'></colgroup>
         <tbody>
           <tr className='division-row'>
             <th className='division-name'>
@@ -194,71 +319,179 @@ const Standings = () => {
           </tr>
         </tbody>
         {NLE?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-          <tr>
-            <td style={{ 'textAlign': 'center' }}>{Name}</td>
-            <td>{Wins}</td>
-            <td>{Losses}</td>
-            <td>{"." + Percentage.toFixed(3).split(".")[1]}</td>
-            <td style={{ 'textAlign': 'center' }}>{GamesBehind === 0 ? '-' : GamesBehind}</td>
-            <td style={{ 'textAlign': 'right' }}>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}</td>
-            <td>{LastTenGamesWins}-{LastTenGamesLosses}</td>
-            <td>{Streak}</td>
-            <td>{RunsScored}</td>
-            <td>{RunsAgainst}</td>
-            <td className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}</td>
-            <td>{HomeWins}-{HomeLosses}</td>
-            <td>{AwayWins}-{AwayLosses}</td>
-          </tr>
+          <tbody>
+            <tr style={{ 'width': '990px', 'height': '48px' }}>
+              <td className='teamName'>
+                <span className='tn'>
+                  <span className='teamData'>{Name}</span>
+                </span>
+              </td>
+              <td className='teamWins'>
+                <span className='numofwins'>{Wins}</span>
+              </td>
+              <td className='teamLosses'>
+                <span className='numofLosses'>{Losses}</span>
+              </td>
+              <td className='teampercent'>
+                <span className='percentage'>{"." + Percentage.toFixed(3).split(".")[1]}</span>
+              </td>
+              <td className='gamesbehind'>
+                <span className='gbh'>{GamesBehind === 0 ? '-' : GamesBehind}</span>
+              </td>
+              <td className='wildcardbehind'>
+                <span className='wcgbh'>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}
+                </span>
+              </td>
+              <td className='last10record'>
+                <span className='lasttenrecord'>{LastTenGamesWins}-{LastTenGamesLosses}</span>
+              </td>
+              <td className='teamstreak'>
+                <span className='ts'>{Streak}</span>
+              </td>
+              <td className='teamRS'>
+                <span className='teamScored'>{RunsScored}</span>
+              </td>
+              <td className='teamRA'>
+                <span className='teamAllowed'>{RunsAgainst}</span>
+              </td>
+              <td className='rundiff'>
+                <span className='teamrundiff'>
+                  <span className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}
+                  </span>
+                </span>
+              </td>
+              <td className='team-home'>
+                <span className='team-home-record'>{HomeWins}-{HomeLosses}</span>
+              </td>
+              <td className='team-away'>
+                <span className='team-away-record'>{AwayWins}-{AwayLosses}</span>
+              </td>
+            </tr>
+          </tbody>
         ))}
         <br />
-        <tbody style={{ 'marginLeft': '20px' }}>
-          <tr>
-            <th>NL Central</th>
+        <tbody>
+          <tr className='division-row'>
+            <th className='division-name'>
+              <span>
+                <span className='division-title'>NL Central</span>
+              </span>
+            </th>
             {headers}
-
           </tr>
         </tbody>
         {NLC?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-          <tr>
-            <td style={{ 'textAlign': 'center' }}>{Name}</td>
-            <td>{Wins}</td>
-            <td>{Losses}</td>
-            <td>{"." + Percentage.toFixed(3).split(".")[1]}</td>
-            <td style={{ 'textAlign': 'center' }}>{GamesBehind === 0 ? '-' : GamesBehind}</td>
-            <td style={{ 'textAlign': 'right' }}>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}</td>
-            <td>{LastTenGamesWins}-{LastTenGamesLosses}</td>
-            <td>{Streak}</td>
-            <td>{RunsScored}</td>
-            <td>{RunsAgainst}</td>
-            <td className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}</td>
-            <td>{HomeWins}-{HomeLosses}</td>
-            <td>{AwayWins}-{AwayLosses}</td>
-          </tr>
+          <tbody>
+            <tr style={{ 'width': '990px', 'height': '48px' }}>
+              <td className='teamName'>
+                <span className='tn'>
+                  <span className='teamData'>{Name}</span>
+                </span>
+              </td>
+              <td className='teamWins'>
+                <span className='numofwins'>{Wins}</span>
+              </td>
+              <td className='teamLosses'>
+                <span className='numofLosses'>{Losses}</span>
+              </td>
+              <td className='teampercent'>
+                <span className='percentage'>{"." + Percentage.toFixed(3).split(".")[1]}</span>
+              </td>
+              <td className='gamesbehind'>
+                <span className='gbh'>{GamesBehind === 0 ? '-' : GamesBehind}</span>
+              </td>
+              <td className='wildcardbehind'>
+                <span className='wcgbh'>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}
+                </span>
+              </td>
+              <td className='last10record'>
+                <span className='lasttenrecord'>{LastTenGamesWins}-{LastTenGamesLosses}</span>
+              </td>
+              <td className='teamstreak'>
+                <span className='ts'>{Streak}</span>
+              </td>
+              <td className='teamRS'>
+                <span className='teamScored'>{RunsScored}</span>
+              </td>
+              <td className='teamRA'>
+                <span className='teamAllowed'>{RunsAgainst}</span>
+              </td>
+              <td className='rundiff'>
+                <span className='teamrundiff'>
+                  <span className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}
+                  </span>
+                </span>
+              </td>
+              <td className='team-home'>
+                <span className='team-home-record'>{HomeWins}-{HomeLosses}</span>
+              </td>
+              <td className='team-away'>
+                <span className='team-away-record'>{AwayWins}-{AwayLosses}</span>
+              </td>
+            </tr>
+          </tbody>
         ))}
         <br />
-        <tbody style={{ 'marginLeft': '20px' }}>
-          <tr>
-            <th>NL West</th>
+        <tbody>
+          <tr className='division-row'>
+            <th className='division-name'>
+              <span>
+                <span className='division-title'>NL West</span>
+              </span>
+            </th>
             {headers}
-
           </tr>
         </tbody>
         {NLW?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-          <tr>
-            <td style={{ 'textAlign': 'center' }}>{Name}</td>
-            <td>{Wins}</td>
-            <td>{Losses}</td>
-            <td>{"." + Percentage.toFixed(3).split(".")[1]}</td>
-            <td style={{ 'textAlign': 'center' }}>{GamesBehind === 0 ? '-' : GamesBehind}</td>
-            <td style={{ 'textAlign': 'right' }}>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}</td>
-            <td>{LastTenGamesWins}-{LastTenGamesLosses}</td>
-            <td>{Streak}</td>
-            <td>{RunsScored}</td>
-            <td>{RunsAgainst}</td>
-            <td className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}</td>
-            <td>{HomeWins}-{HomeLosses}</td>
-            <td>{AwayWins}-{AwayLosses}</td>
-          </tr>
+          <tbody>
+            <tr style={{ 'width': '990px', 'height': '48px' }}>
+              <td className='teamName'>
+                <span className='tn'>
+                  <span className='teamData'>{Name}</span>
+                </span>
+              </td>
+              <td className='teamWins'>
+                <span className='numofwins'>{Wins}</span>
+              </td>
+              <td className='teamLosses'>
+                <span className='numofLosses'>{Losses}</span>
+              </td>
+              <td className='teampercent'>
+                <span className='percentage'>{"." + Percentage.toFixed(3).split(".")[1]}</span>
+              </td>
+              <td className='gamesbehind'>
+                <span className='gbh'>{GamesBehind === 0 ? '-' : GamesBehind}</span>
+              </td>
+              <td className='wildcardbehind'>
+                <span className='wcgbh'>{WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}
+                </span>
+              </td>
+              <td className='last10record'>
+                <span className='lasttenrecord'>{LastTenGamesWins}-{LastTenGamesLosses}</span>
+              </td>
+              <td className='teamstreak'>
+                <span className='ts'>{Streak}</span>
+              </td>
+              <td className='teamRS'>
+                <span className='teamScored'>{RunsScored}</span>
+              </td>
+              <td className='teamRA'>
+                <span className='teamAllowed'>{RunsAgainst}</span>
+              </td>
+              <td className='rundiff'>
+                <span className='teamrundiff'>
+                  <span className={`${RunsScored - RunsAgainst > 0 ? 'Positive' : 'Negative'}`}>{RunsScored - RunsAgainst > 0 ? "+" + (RunsScored - RunsAgainst) : RunsScored - RunsAgainst}
+                  </span>
+                </span>
+              </td>
+              <td className='team-home'>
+                <span className='team-home-record'>{HomeWins}-{HomeLosses}</span>
+              </td>
+              <td className='team-away'>
+                <span className='team-away-record'>{AwayWins}-{AwayLosses}</span>
+              </td>
+            </tr>
+          </tbody>
         ))}
         <br />
       </table>
