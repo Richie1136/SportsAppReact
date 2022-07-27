@@ -1,0 +1,128 @@
+.teamName {
+  width: 170px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0 11.2px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.tn {
+  width: 146.61px;
+  height: 24px;
+}
+
+.teamData {
+  width: 81.16px;
+  height: 21.59px;
+}
+
+.teamWins {
+  width: 48px;
+  height: 32px;
+  padding: 1px 8px 1px 16px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.numofwins {
+  width: 16px;
+  height: 16.5px;
+}
+
+.numofLosses {
+  width: 16.02;
+  height: 16.5px;
+}
+
+.teampercent {
+  width: 48px;
+  height: 48px;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333333;
+  background-color: #f7f7f7;
+  padding: 1px 8px;
+}
+
+.header-percentage {
+  width: 28.03px;
+  height: 16.5px;
+  display: inline;
+  border-bottom: 1px dotted;
+}
+
+.gbh {
+  width: 28.03px;
+  height: 16.5px;
+}
+
+.games {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 16px 1px 8px;
+}
+
+.wcgbh {
+  width: 28.43px;
+  height: 16.5px;
+}
+
+.teamData {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 8px;
+}
+
+.lasttenrecord {
+  width: 20.81px;
+  height: 16.5px;
+}
+
+.ts {
+  width: 20.81px;
+  height: 16.5px;
+}
+
+.team-Scored-Allowed {
+  width: 24.03px;
+  height: 16.5px;
+}
+
+.team-home-away {
+  width: 60px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 8px;
+}
+
+.team-record {
+  width: 36.84px;
+  height: 16.5px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.TS {
+  width: 48px;
+  height: 48px;
+  color: #333333;
+  font-size: 14.4px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 1px 16px 1px 8px;
+  text-align: center;
+}
