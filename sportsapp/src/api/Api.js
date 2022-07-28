@@ -1,52 +1,10 @@
-import {
-  API_URL
-} from '../config'
 // API USED
 
-// https://appac.github.io/mlb-data-api-docs/#player-data-player-teams-get
+// https://api.sportsdata.io/v3/mlb/scores/json/Standings/2022
+// https://api.sportsdata.io/v3/mlb/scores/json/Player/{playerid}
+// https://api.sportsdata.io/v3/mlb/scores/json/Players/{team}
 
-// import teamData from './teams.json'
 
-
-export const baseURL = 'http://lookup-service-prod.mlb.com'
-
-const defaultConfig = {
-  method: "GET",
-  headers: {
-    "x-rapidapi-host": "mlb-data.p.rapidapi.com",
-    "x-rapidapi-key": "655bdaa00dmsh1dfed893f79b687p102403jsn162126e9f66e"
-  }
-}
-
-export const fetchTeams = async (team_id) => {
-  try {
-    const response = await fetch(`${baseURL}/json/named.roster_40.bam?${team_id}`)
-    console.log(response)
-    const data = response.json()
-    console.log(response)
-    // return data
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-// fetchPlayer: async (player_id) => {
-//   const endpoint = `"https://mlb-data.p.rapidapi.com/json/named.player_info.bam?sport_code='mlb'&${player_id}"`;
-//   return await (await fetch(endpoint)).json();
-// }
-
-//http://lookup-service-prod.mlb.com/json/named.roster_40.bam?team_id=%27121%27
 
 export const baseurlPlayer = "https://api.sportsdata.io/v3/mlb/scores/json"
 export const APIKEY = '45ca846d2b2c4f5ab1f8b6e1a6f66ffb'
-
-export const getPlayerDetails = async () => {
-  try {
-    const response = await fetch(`${baseurlPlayer}/Players/${APIKEY}`)
-    console.log(response)
-    const data = response.json()
-    console.log(data)
-  } catch (error) {
-    console.log(error)
-  }
-}

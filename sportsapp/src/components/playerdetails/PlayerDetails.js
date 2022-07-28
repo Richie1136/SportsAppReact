@@ -16,7 +16,6 @@ const PlayerDetails = () => {
   const term = obj.get('player_id')
 
   let results = `${baseurlPlayer}/Player/${term}?key=${APIKEY}`
-  console.log(results)
 
 
   const today = new Date();
@@ -27,7 +26,6 @@ const PlayerDetails = () => {
       try {
         const response = await fetch(results)
         const playerInfo = await response.json()
-        console.log(playerInfo)
         setPlayerData(playerInfo)
       } catch (error) {
         console.log(error)

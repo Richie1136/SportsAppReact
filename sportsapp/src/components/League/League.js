@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Card from '../card/Card'
 import './League.css'
 import teamData from '../../teams.json'
@@ -79,10 +79,10 @@ const League = () => {
   return (
     <div className='league'>
       <label style={{ 'marginTop': '10px', 'position': 'fixed' }}>
-        <select value={filteredResults} onChange={handleChange}>
+        <select style={{ 'textAlign': 'center' }} value={filteredResults} onChange={handleChange}>
           <option multiple={false} value={"Choose a Division or League"}>Choose</option>
           <option multiple={false} value={"ALL"}>ALL</option>
-          <option multiple={false} value={"AL"}>AL</option>
+          <option style={{ 'color': '#0E4082' }} multiple={false} value={"AL"}>AL</option>
           <option multiple={false} value={"AL Central"}>AL Central</option>
           <option multiple={false} value={"AL East"}>AL East</option>
           <option multiple={false} value={"AL West"}>AL West</option>
@@ -98,8 +98,8 @@ const League = () => {
             {website_url ? <h2><a style={{ 'textDecoration': 'none', 'color': 'black' }} href={`https://${website_url}`} target="_blank" rel='noreferrer'>{name_display_full}</a></h2> : <h2>{name_display_full}</h2>}
             <h5>{venue_name}</h5>
             <img style={{ 'height': '250px', 'width': '250px' }} src={logo} alt='Team Logo' />
-            <h4>{address_line1}, {address_city} {address_state} {address_zip}</h4>
-            <h6>{phone_number}</h6>
+            <h4>{address_line1}, {address_city}, {address_state} {address_zip}</h4>
+            <h5>{phone_number}</h5>
           </div>
         </Card>
       ))

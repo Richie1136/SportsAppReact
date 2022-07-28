@@ -1,21 +1,15 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import { baseurlPlayer, APIKEY } from '../../api/Api'
 import './Standings.css'
 import Row from '../row/Row'
 
+console.log(APIKEY)
+
 const Standings = () => {
 
   const [standings, setStandings] = useState()
-  const [toggle, setToggle] = useState(false)
-
-  const triggleToggle = () => {
-    setToggle(!toggle)
-  }
-
 
   let results = `${baseurlPlayer}/Standings/2022?key=${APIKEY}`
-  // console.log(results)
 
 
 
@@ -32,8 +26,6 @@ const Standings = () => {
     }
     getStandings()
   }, [])
-
-  console.log(standings)
 
   let ALE = standings?.filter((status) => status.Division).filter((league) => league.League === 'AL').filter((division) => division.Division === 'East')
   let ALC = standings?.filter((status) => status.Division).filter((league) => league.League === 'AL').filter((division) => division.Division === 'Central')

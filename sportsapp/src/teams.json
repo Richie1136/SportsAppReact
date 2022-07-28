@@ -1394,7 +1394,8 @@
         "address": "1500 South Capitol Street, SE&#xa;Washington, DC&#x9;20003-1507",
         "name_display_brief": "Nationals",
         "file_code": "was",
-        "venue_short": "Nationals Park"
+        "venue_short": "Nationals Park",
+        "color": "#AB0003"
       }
     ]
   }

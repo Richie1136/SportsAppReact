@@ -12,7 +12,7 @@ const Team = () => (
       </Card>
     ))
     }
-  </div >
+  </div>
 )
 
 export default Team
