@@ -112,14 +112,6 @@ th span {
   border-bottom: 1px dotted;
 }
 
-table td {
-  /* text-align: right; */
-  /* white-space: nowrap; */
-  height: 40px;
-  /* padding-left: 0.5rem;
-  padding-right: 0.5rem; */
-}
-
 tbody {
   display: table-row-group;
   vertical-align: middle;

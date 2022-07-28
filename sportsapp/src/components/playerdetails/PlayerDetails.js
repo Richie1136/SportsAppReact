@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
-// import { baseURL } from '../../api/Api'
-import Card from '../card/Card'
 import { useParams } from 'react-router-dom'
-import { baseURL, baseurlPlayer, APIKEY } from '../../api/Api'
+import { baseurlPlayer, APIKEY } from '../../api/Api'
 import './PlayerDetails.css'
 
 

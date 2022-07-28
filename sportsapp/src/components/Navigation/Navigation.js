@@ -5,19 +5,16 @@ const Navigation = () => {
   return (
     <div className='nav'>
       <NavLink to='/'>
-        <span>Home</span>
+        <span>League</span>
       </NavLink>
       <div className='nav-center'>
         <NavLink to='/team'>
           <span>Team</span>
         </NavLink>
-        <NavLink to='/standings'>
-          <span>Standings</span>
-        </NavLink>
       </div>
       <div className='nav-right'>
-        <NavLink to='/player'>
-          <span>Player</span>
+        <NavLink to='/standings'>
+          <span>Standings</span>
         </NavLink>
       </div>
     </div>
