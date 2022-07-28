@@ -27,10 +27,6 @@
   height: 16.5px;
 }
 
-.table {
-  width: 990px;
-}
-
 .division-row {
   width: 990px;
   height: 32px;
@@ -45,6 +41,11 @@ tr {
 table {
   border-spacing: 0;
   border-collapse: collapse;
+  table-layout: fixed;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  margin-top: 30px;
 }
 
 .division-name {
@@ -286,4 +287,8 @@ tbody {
 .span {
   width: 44px;
   height: 18px;
+}
+
+.division-title {
+  padding: 0 1rem;
 }

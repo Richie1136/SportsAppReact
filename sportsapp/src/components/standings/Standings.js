@@ -75,9 +75,9 @@ const Standings = () => {
         </span>
       </th>
       <th className='streak'>
-        <soan className='tstreak'>
+        <span className='tstreak'>
           <span className='teamStreak'>STRK</span>
-        </soan>
+        </span>
       </th>
       <th className='rs'>
         <span className='runs'>
@@ -110,7 +110,7 @@ const Standings = () => {
 
   return (
     <>
-      <table style={{ 'position': 'relative', 'marginTop': '15px' }}>
+      <table>
         <colgroup style={{ 'width': '410px', 'height': '272px' }} span='6'></colgroup>
         <colgroup style={{ 'width': '272px', 'height': '96px' }} span='2'></colgroup>
         <colgroup style={{ 'width': '272px', 'height': '204px' }} span='4'></colgroup>
