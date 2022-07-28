@@ -6,23 +6,15 @@ import teamData from '../../teams.json'
 
 const League = () => {
 
-  const [toggle, setToggle] = useState(false)
   const [initialTeams, setIntialTeams] = useState(teamData)
   const [filteredResults, setFilteredResults] = useState(null)
 
 
   let displayData = []
 
-  console.log(teamData)
+  let allTeams = teamData?.queryResults?.row
 
 
-
-
-  // console.log(division)
-
-  const triggleToggle = () => {
-    setToggle(!toggle)
-  }
   let NL = teamData?.queryResults.row.filter((team) => team.league_full === 'National League')
   let AL = teamData?.queryResults.row.filter((team) => team.league_full === 'American League')
 
@@ -41,9 +33,9 @@ const League = () => {
     setIntialTeams(event.target.value)
   }
 
-  // if (initialTeams === 'All') {
-  //   displayData = allTeams
-  // }
+  if (initialTeams === 'ALL') {
+    displayData = allTeams
+  }
 
   if (initialTeams === 'AL') {
     displayData = AL
@@ -86,13 +78,13 @@ const League = () => {
 
   return (
     <div className='league'>
-      <label>
+      <label style={{ 'marginTop': '10px', 'position': 'fixed' }}>
         <select value={filteredResults} onChange={handleChange}>
+          <option multiple={false} value={"Choose a Division or League"}>Choose</option>
           <option multiple={false} value={"ALL"}>ALL</option>
           <option multiple={false} value={"AL"}>AL</option>
           <option multiple={false} value={"AL Central"}>AL Central</option>
           <option multiple={false} value={"AL East"}>AL East</option>
-          <option multiple={false} value={"AL Central"}>AL Central</option>
           <option multiple={false} value={"AL West"}>AL West</option>
           <option multiple={false} value={"NL"}>NL</option>
           <option multiple={false} value={"NL East"}>NL East</option>
@@ -100,17 +92,7 @@ const League = () => {
           <option multiple={false} value={"NL West"}>NL West</option>
         </select>
       </label>
-      {/* {teamData?.queryResults?.row.map(({ name_display_full, logo, team_id, Team }) => (
-        <Card key={name_display_full}>
-          <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
-            {team_id ? <h2><a style={{ 'textDecoration': 'none', 'color': 'black' }} href={`/${Team}`}>{name_display_full}</a></h2> : <h2>{name_display_full}</h2>}
-            <img style={{ 'height': '250px', 'width': '250px' }} src={logo} alt='Team Logo' />
-          </div>
-        </Card>
-      ))
-      } */}
       {displayData?.map(({ name_display_full, logo, team_id, Team }) => (
-
         <Card key={name_display_full}>
           <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
             {team_id ? <h2><a style={{ 'textDecoration': 'none', 'color': 'black' }} href={`/${Team}`}>{name_display_full}</a></h2> : <h2>{name_display_full}</h2>}
