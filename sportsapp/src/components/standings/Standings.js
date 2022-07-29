@@ -115,7 +115,7 @@ const Standings = () => {
           </tr>
         </tbody>
         {ALE?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-          <Row Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
+          <Row key={Name} Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
         ))}
         <tbody>
           <tr className='division-row'>
@@ -128,9 +128,8 @@ const Standings = () => {
           </tr>
         </tbody>
         {ALC?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-          <Row Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
+          <Row key={Name} Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
         ))}
-        <br />
         <tbody>
           <tr className='division-row'>
             <th className='division-name'>
@@ -142,9 +141,8 @@ const Standings = () => {
           </tr>
         </tbody>
         {ALW?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-          <Row Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
+          <Row key={Name} Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
         ))}
-        <br />
       </table>
       <table>
         <colgroup span='6'></colgroup>
@@ -162,9 +160,8 @@ const Standings = () => {
           </tr>
         </tbody>
         {NLE?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-          <Row Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
+          <Row key={Name} Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
         ))}
-        <br />
         <tbody>
           <tr className='division-row'>
             <th className='division-name'>
@@ -176,9 +173,8 @@ const Standings = () => {
           </tr>
         </tbody>
         {NLC?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-          <Row Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
+          <Row key={Name} Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
         ))}
-        <br />
         <tbody>
           <tr className='division-row'>
             <th className='division-name'>
@@ -190,9 +186,8 @@ const Standings = () => {
           </tr>
         </tbody>
         {NLW?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
-          <Row Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
+          <Row key={Name} Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
         ))}
-        <br />
       </table>
     </>
   )
