@@ -156,3 +156,8 @@ li {
   font-weight: bold;
   color: white;
 }
+
+li.born {
+  width: 285px;
+  flex-wrap: nowrap;
+}

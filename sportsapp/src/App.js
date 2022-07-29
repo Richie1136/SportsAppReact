@@ -1,4 +1,5 @@
 import AllRoutes from './components/routes/Routes';
+import './App.css'
 
 const App = () => {
 

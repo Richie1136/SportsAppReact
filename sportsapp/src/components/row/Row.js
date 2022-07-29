@@ -2,7 +2,7 @@ import './Row.css'
 
 const Row = ({ Name, GamesBehind, Wins, Losses, Percentage, RunsScored, RunsAgainst, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
   <tbody>
-    <tr style={{ 'width': '990px', 'height': '48px' }}>
+    <tr>
       <td className='teamName'>
         <span className='tn'>
           <span className='teamData'>{Name}</span>

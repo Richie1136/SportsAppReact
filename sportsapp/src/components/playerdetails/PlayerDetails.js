@@ -3,9 +3,6 @@ import { useParams } from 'react-router-dom'
 import { baseurlPlayer, APIKEY } from '../../api/Api'
 import './PlayerDetails.css'
 
-
-
-
 const PlayerDetails = () => {
   const [playerData, setPlayerData] = useState()
 
@@ -74,7 +71,7 @@ const PlayerDetails = () => {
         </div>
         <div className='player-bio'>
           <ul>
-            <li style={{ 'width': '285px', 'flexWrap': 'nowrap' }}>
+            <li className='born'>
               <span className='label'>Born: </span>
               {birthMonth}/{birthDay}/{birthYear} in {playerData?.BirthCity}, {playerData?.BirthState ? playerData?.BirthState : playerData?.BirthCountry}
             </li>

@@ -3,22 +3,17 @@ import { baseurlPlayer, APIKEY } from '../../api/Api'
 import './Standings.css'
 import Row from '../row/Row'
 
-console.log(APIKEY)
-
 const Standings = () => {
 
   const [standings, setStandings] = useState()
 
   let results = `${baseurlPlayer}/Standings/2022?key=${APIKEY}`
 
-
-
   useEffect(() => {
     const getStandings = async () => {
       try {
         const response = await fetch(results)
         const data = await response.json()
-        console.log(data)
         setStandings(data)
       } catch (error) {
         console.log(error)
@@ -103,10 +98,10 @@ const Standings = () => {
   return (
     <>
       <table>
-        <colgroup style={{ 'width': '410px', 'height': '272px' }} span='6'></colgroup>
-        <colgroup style={{ 'width': '272px', 'height': '96px' }} span='2'></colgroup>
-        <colgroup style={{ 'width': '272px', 'height': '204px' }} span='4'></colgroup>
-        <colgroup style={{ 'width': '272px', 'height': '180px' }} span='3'></colgroup>
+        <colgroup className='col1' span='6'></colgroup>
+        <colgroup className='col2' span='2'></colgroup>
+        <colgroup className='col3' span='4'></colgroup>
+        <colgroup className='col4' span='3'></colgroup>
         <tbody>
           <tr className='division-row'>
             <th className='division-name'>
@@ -149,11 +144,11 @@ const Standings = () => {
         ))}
         <br />
       </table>
-      <table style={{ 'position': 'relative', 'marginTop': '15px' }}>
-        <colgroup style={{ 'width': '410px', 'height': '272px' }} span='6'></colgroup>
-        <colgroup style={{ 'width': '272px', 'height': '96px' }} span='2'></colgroup>
-        <colgroup style={{ 'width': '272px', 'height': '204px' }} span='4'></colgroup>
-        <colgroup style={{ 'width': '272px', 'height': '180px' }} span='3'></colgroup>
+      <table>
+        <colgroup span='6'></colgroup>
+        <colgroup span='2'></colgroup>
+        <colgroup span='4'></colgroup>
+        <colgroup span='3'></colgroup>
         <tbody>
           <tr className='division-row'>
             <th className='division-name'>
@@ -202,8 +197,3 @@ const Standings = () => {
 }
 
 export default Standings
-
-
-
-
-// https://api.sportsdata.io/v3/mlb/scores/json/Standings/2022

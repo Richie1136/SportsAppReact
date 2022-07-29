@@ -1,0 +1,16 @@
+.team-roster-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.player-info {
+  text-align: center;
+  width: 230px;
+  margin-left: 12px;
+}
+
+h2 a {
+  text-decoration: none;
+  color: black;
+}

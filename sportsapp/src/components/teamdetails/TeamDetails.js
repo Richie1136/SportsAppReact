@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { baseurlPlayer, APIKEY } from '../../api/Api'
 import Card from '../card/Card'
 import { useParams } from 'react-router-dom'
+import './TeamDetails.css'
 
 const TeamDetails = () => {
   const [teamInfo, setTeamInfo] = useState()
@@ -9,12 +10,10 @@ const TeamDetails = () => {
   const params = useParams()
 
   const obj = new URLSearchParams(params);
-  console.log(obj.values())
 
   const term = obj.get('Team')
 
   let results = `${baseurlPlayer}/Players/${term}?key=${APIKEY}`
-  console.log(results)
 
 
   useEffect(() => {
@@ -31,15 +30,14 @@ const TeamDetails = () => {
   }, [])
 
   let active = teamInfo?.filter((status) => status.Status === 'Active')
-  console.log(active)
 
   return (
     <>
-      <div style={{ 'display': 'flex', 'flexWrap': 'wrap', 'justifyContent': 'space-evenly' }}>
+      <div className='team-roster-container'>
         {active?.map(({ FirstName, MLBAMID, LastName, PlayerID }) => (
           <Card key={MLBAMID} >
-            <div style={{ 'textAlign': 'center', 'width': '230px', 'marginLeft': '12px' }}>
-              {FirstName && <h2><a style={{ 'textDecoration': 'none', 'color': 'black' }} href={`/player/${PlayerID}`}>{FirstName} {LastName}</a></h2>}
+            <div className='player-info'>
+              {FirstName && <h2><a href={`/player/${PlayerID}`}>{FirstName} {LastName}</a></h2>}
             </div>
           </Card>
         ))

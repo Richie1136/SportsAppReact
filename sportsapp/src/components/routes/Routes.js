@@ -1,7 +1,6 @@
 import Team from '../Team/Team'
 import { Routes, Route } from 'react-router-dom'
 import League from '../League/League';
-import NotFound from '../NotFound/NotFound';
 import Navigation from '../Navigation/Navigation'
 import TeamDetails from '../teamdetails/TeamDetails';
 import PlayerDetails from '../playerdetails/PlayerDetails'
@@ -16,7 +15,6 @@ const AllRoutes = () => (
       <Route path='/:Team' element={<TeamDetails />} />
       <Route path='/standings' element={<Standings />} />
       <Route path='/player/:player_id' element={<PlayerDetails />} />
-      <Route path='*' element={<NotFound />} />
     </Routes>
   </>
 )
