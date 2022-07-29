@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { baseurlPlayer, APIKEY } from '../../api/Api'
+import { baseurlPlayer } from '../../api/Api'
 import './PlayerDetails.css'
+
+const APIKEY = process.env.REACT_APP_API_KEY
+
 
 const PlayerDetails = () => {
   const [playerData, setPlayerData] = useState()

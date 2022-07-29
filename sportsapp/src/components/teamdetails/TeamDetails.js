@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
-import { baseurlPlayer, APIKEY } from '../../api/Api'
+import { baseurlPlayer } from '../../api/Api'
 import Card from '../card/Card'
 import { useParams } from 'react-router-dom'
 import './TeamDetails.css'
+
+const APIKEY = process.env.REACT_APP_API_KEY
+
 
 const TeamDetails = () => {
   const [teamInfo, setTeamInfo] = useState()

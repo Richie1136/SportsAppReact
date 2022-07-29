@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
-import { baseurlPlayer, APIKEY } from '../../api/Api'
+import { baseurlPlayer } from '../../api/Api'
 import './Standings.css'
 import Row from '../row/Row'
+
+const APIKEY = process.env.REACT_APP_API_KEY
 
 const Standings = () => {
 
