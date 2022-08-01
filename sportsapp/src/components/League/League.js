@@ -10,9 +10,9 @@ const League = () => {
   const [filteredResults, setFilteredResults] = useState(null)
 
 
-  let displayData = []
-
   let allTeams = teamData?.queryResults?.row
+  let displayData = allTeams
+
 
 
   let NL = teamData?.queryResults.row.filter((team) => team.league_full === 'National League')
@@ -65,7 +65,6 @@ const League = () => {
     <div className='league'>
       <label>
         <select value={filteredResults} onChange={handleChange}>
-          <option multiple={false} value={"Choose a Division or League"}>Choose</option>
           <option multiple={false} value={"ALL"}>ALL</option>
           <option multiple={false} value={"AL"}>AL</option>
           <option multiple={false} value={"AL East"}>AL East</option>
