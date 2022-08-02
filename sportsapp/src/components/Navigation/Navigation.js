@@ -22,6 +22,3 @@ const Navigation = () => {
 }
 
 export default Navigation
-
-
-// REACT_APP_API_KEY = '45ca846d2b2c4f5ab1f8b6e1a6f66ffb'
