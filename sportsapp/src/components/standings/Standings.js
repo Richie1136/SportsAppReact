@@ -143,12 +143,6 @@ const Standings = () => {
         {ALW?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
           <Row key={Name} Name={Name} GamesBehind={GamesBehind} Wins={Wins} Losses={Losses} Percentage={Percentage} RunsScored={RunsScored} RunsAgainst={RunsAgainst} WildCardGamesBehind={WildCardGamesBehind} LastTenGamesWins={LastTenGamesWins} LastTenGamesLosses={LastTenGamesLosses} Streak={Streak} HomeWins={HomeWins} HomeLosses={HomeLosses} AwayWins={AwayWins} AwayLosses={AwayLosses} />
         ))}
-      </table>
-      <table>
-        <colgroup span='6'></colgroup>
-        <colgroup span='2'></colgroup>
-        <colgroup span='4'></colgroup>
-        <colgroup span='3'></colgroup>
         <tbody>
           <tr className='division-row'>
             <th className='division-name'>
