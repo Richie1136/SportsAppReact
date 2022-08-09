@@ -21,3 +21,12 @@ Used sportsdata.io api to get the current standings, as well as to get player de
 2. I struggled a little figuring out the filtered but it turned out much easier then I envisioned
 
 3. Trying to get the standings component to look as good as possible and debated weather to have the NL standings underneath the AL standings or to have the NL standings next to the AL standings
+
+In the future i would like to add user auth and add favorites for users
+
+# How to run project
+
+Clone the repository
+Change into project directory
+Run npm install, to install all needed npm packages to run the application
+Run npm start
