@@ -3,6 +3,9 @@ import './App.css'
 import { useEffect } from 'react'
 import { useStateValue } from './store/state-context';
 import { auth } from './firebase';
+import { Routes, Route } from 'react-router-dom';
+import AllMeetupsPage from './components/allmeetups/AllMeetups';
+import Favorites from './components/favorites/Favorites';
 
 const App = () => {
 

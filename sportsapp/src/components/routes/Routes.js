@@ -6,6 +6,7 @@ import TeamDetails from '../teamdetails/TeamDetails';
 import PlayerDetails from '../playerdetails/PlayerDetails'
 import Standings from '../standings/Standings';
 import Login from '../login/Login';
+import Favorites from '../favorites/Favorites';
 
 const AllRoutes = () => (
   <>
@@ -17,6 +18,7 @@ const AllRoutes = () => (
       <Route path='/:Team' element={<TeamDetails />} />
       <Route path='/standings' element={<Standings />} />
       <Route path='/player/:player_id' element={<PlayerDetails />} />
+      <Route path='/favorites' element={<Favorites />} />
     </Routes>
   </>
 )
