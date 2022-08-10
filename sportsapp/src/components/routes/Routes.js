@@ -5,11 +5,13 @@ import Navigation from '../Navigation/Navigation'
 import TeamDetails from '../teamdetails/TeamDetails';
 import PlayerDetails from '../playerdetails/PlayerDetails'
 import Standings from '../standings/Standings';
+import Login from '../login/Login';
 
 const AllRoutes = () => (
   <>
     <Navigation />
     <Routes>
+      <Route path='/login' element={<Login />} />
       <Route path='/' element={<League />} />
       <Route path='/team' element={<Team />} />
       <Route path='/:Team' element={<TeamDetails />} />

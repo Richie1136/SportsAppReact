@@ -1,23 +1,40 @@
 import { NavLink } from 'react-router-dom'
+import { auth } from '../../firebase'
 import './Navigation.css'
+import { useStateValue } from '../../store/state-context'
 
 const Navigation = () => {
+
+  const [{ user }, dispatch] = useStateValue()
+
+  const handleAuth = () => {
+    if (user) {
+      auth.signOut()
+    }
+  }
+
   return (
-    <div className='nav'>
+
+    <nav className='nav'>
       <NavLink to='/'>
         <span>League</span>
       </NavLink>
-      <div className='nav-center'>
-        <NavLink to='/team'>
-          <span>Team</span>
-        </NavLink>
-      </div>
-      <div className='nav-right'>
-        <NavLink to='/standings'>
-          <span>Standings</span>
-        </NavLink>
-      </div>
-    </div>
+      <NavLink to='/team'>
+        <span>Team</span>
+      </NavLink>
+      <NavLink to='/standings'>
+        <span>Standings</span>
+      </NavLink>
+      <NavLink to='/favorites'>
+        <span>Favorites</span>
+      </NavLink>
+      <NavLink to={!user && '/login'}>
+        <div onClick={handleAuth} className='nav-option'>
+          <span className='nav-option-lineone'>Hello {user ? user.email : 'Guest'}</span>
+          <span className='nav-option-linetwo'>{user ? 'Sign out' : 'Sign in'}</span>
+        </div>
+      </NavLink>
+    </nav>
   )
 }
 
