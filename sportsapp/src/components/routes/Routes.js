@@ -18,7 +18,7 @@ const AllRoutes = () => (
       <Route path='/:Team' element={<TeamDetails />} />
       <Route path='/standings' element={<Standings />} />
       <Route path='/player/:player_id' element={<PlayerDetails />} />
-      <Route path='/favorites' element={<Favorites />} />
+      {/* <Route path='/favorites' element={<Favorites />} /> */}
     </Routes>
   </>
 )

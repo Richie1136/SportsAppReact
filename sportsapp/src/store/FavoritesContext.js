@@ -17,14 +17,14 @@ export const FavoritesContextProvider = ({ children }) => {
     })
   }
 
-  const handleRemoveFavorite = (team_id) => {
+  const handleRemoveFavorite = (id) => {
     setUserFavorites(prevUserFavorites => {
-      return prevUserFavorites.filter(team => team.id !== team_id)
+      return prevUserFavorites.filter(team => team.id !== id)
     })
   }
 
-  const TeamIsFavorite = (team_id) => {
-    return userFavorites.some(team => team.id === team_id)
+  const TeamIsFavorite = (id) => {
+    return userFavorites.some(team => team.id === id)
   }
 
   const context = {

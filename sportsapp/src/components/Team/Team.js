@@ -21,22 +21,17 @@ const Team = () => {
     }
   }
   return (
-    // <div className='container'>
-    //   {teamData?.queryResults?.row.map(({ name_display_full, logo, team_id, Team }) => (
-    //     <Card key={name_display_full}>
-    //       <div className='team-info'>
-    //         {team_id ? <h2><a href={`/${Team}`}>{name_display_full}</a></h2> : <h2>{name_display_full}</h2>}
-    //         <img src={logo} alt='Team Logo' />
-    //       </div>
-    //       <button onClick={toggleFavoriteStatus}>{TeamIsFavorite ? "Remove from Favorites" : "Add to Favorites"}</button>
-    //     </Card>
-    //   ))
-    //   }
-    // </div>
     <div className='container'>
-      {teamData?.queryResults?.row.map(({ name_display_full, logo, team_id, Team }) => {
-        return <TeamItem key={name_display_full} id={team_id} name={name_display_full} logo={logo} />
-      })}
+      {teamData?.queryResults?.row.map(({ name_display_full, logo, team_id, Team }) => (
+        <Card key={name_display_full}>
+          <div className='team-info'>
+            {team_id ? <h2><a href={`/${Team}`}>{name_display_full}</a></h2> : <h2>{name_display_full}</h2>}
+            <img src={logo} alt='Team Logo' />
+          </div>
+          <button onClick={toggleFavoriteStatus}>{TeamIsFavorite ? "Remove from Favorites" : "Add to Favorites"}</button>
+        </Card>
+      ))
+      }
     </div>
   )
 }
