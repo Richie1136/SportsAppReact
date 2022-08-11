@@ -28,7 +28,6 @@ const Team = () => {
             {team_id ? <h2><a href={`/${Team}`}>{name_display_full}</a></h2> : <h2>{name_display_full}</h2>}
             <img src={logo} alt='Team Logo' />
           </div>
-          <button onClick={toggleFavoriteStatus}>{TeamIsFavorite ? "Remove from Favorites" : "Add to Favorites"}</button>
         </Card>
       ))
       }

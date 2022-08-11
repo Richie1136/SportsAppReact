@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { baseurlPlayer } from '../../api/Api'
 import './Standings.css'
 import Row from '../row/Row'
+import Loading from '../loading/Loading'
 
 const APIKEY = process.env.REACT_APP_API_KEY
 
@@ -23,6 +24,8 @@ const Standings = () => {
     }
     getStandings()
   }, [])
+
+  if (!standings) return <Loading />
 
   let ALE = standings?.filter((status) => status.Division).filter((league) => league.League === 'AL').filter((division) => division.Division === 'East')
   let ALC = standings?.filter((status) => status.Division).filter((league) => league.League === 'AL').filter((division) => division.Division === 'Central')

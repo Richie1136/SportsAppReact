@@ -3,6 +3,7 @@ import { baseurlPlayer } from '../../api/Api'
 import Card from '../card/Card'
 import { useParams } from 'react-router-dom'
 import './TeamDetails.css'
+import Loading from '../loading/Loading'
 
 const APIKEY = process.env.REACT_APP_API_KEY
 
@@ -33,6 +34,8 @@ const TeamDetails = () => {
   }, [])
 
   let active = teamInfo?.filter((status) => status.Status === 'Active')
+
+  if (!teamInfo) return <Loading />
 
   return (
     <>

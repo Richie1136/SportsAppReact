@@ -26,6 +26,7 @@ const PlayerDetails = () => {
       try {
         const response = await fetch(results)
         const playerInfo = await response.json()
+        console.log(playerInfo)
         setPlayerData(playerInfo)
       } catch (error) {
         console.log(error)
@@ -55,6 +56,8 @@ const PlayerDetails = () => {
   let proDebutDay = proDebut[1] < 10 ? `0${proDebut[1]}` : `${proDebut[1]}`
   let proDebutYear = proDebut[2]
 
+
+  console.log(playerData)
 
   return (
     <>
