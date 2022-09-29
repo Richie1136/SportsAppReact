@@ -42,9 +42,9 @@ const Login = () => {
         <img className='login-logo' src='https://thumbs.dreamstime.com/z/major-league-baseball-logos-high-quality-vector-collection-teams-editable-vector-file-available-78778493.jpg' alt='amazon' />
       </NavLink>
       <div className='login-container'>
-        <h1>Sign in</h1>
+        <h1>Sign In</h1>
         <form>
-          <h5>E-mail</h5>
+          <h5>E-Mail</h5>
           <input type='text' onChange={onEmailChange} value={email} />
           <h5>Password</h5>
           <input type='password' onChange={onPasswordChange} value={password} />
