@@ -35,9 +35,6 @@ const PlayerDetails = () => {
     playerData()
   }, [results])
 
-
-  console.log(playerData)
-
   const { Height, Weight, PhotoUrl, FirstName, LastName, Jersey, Position, BirthDate, ProDebut, BatHand, ThrowHand, College, BirthCity, BirthState, BirthCountry } = playerData
 
   let proDebutTime = ProDebut

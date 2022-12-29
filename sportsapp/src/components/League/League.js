@@ -3,30 +3,21 @@ import Card from '../card/Card'
 import './League.css'
 import teamData from '../../teams.json'
 
-
 const League = () => {
-
   const [initialTeams, setIntialTeams] = useState(teamData)
-  const [filteredResults, setFilteredResults] = useState(null)
-
+  const [filteredResults, setFilteredResults] = useState(undefined)
 
   let allTeams = teamData?.queryResults?.row
   let displayData = allTeams
 
-
-
   let NL = teamData?.queryResults.row.filter((team) => team.league_full === 'National League')
   let AL = teamData?.queryResults.row.filter((team) => team.league_full === 'American League')
-
-
   let ALE = AL?.filter((status) => status.division).filter((league) => league.league === 'AL').filter((division) => division.division === 'E')
   let ALC = AL?.filter((status) => status.division).filter((league) => league.league === 'AL').filter((division) => division.division === 'C')
   let ALW = AL?.filter((status) => status.division).filter((league) => league.league === 'AL').filter((division) => division.division === 'W')
   let NLE = NL?.filter((status) => status.division).filter((league) => league.league === 'NL').filter((division) => division.division === 'E')
   let NLC = NL?.filter((status) => status.division).filter((league) => league.league === 'NL').filter((division) => division.division === 'C')
   let NLW = NL?.filter((status) => status.division).filter((league) => league.league === 'NL').filter((division) => division.division === 'W')
-
-
 
   const handleChange = (event) => {
     setIntialTeams(event.target.value)
@@ -59,7 +50,6 @@ const League = () => {
   if (initialTeams === 'NL West') {
     displayData = NLW
   }
-
 
   return (
     <div className='league'>

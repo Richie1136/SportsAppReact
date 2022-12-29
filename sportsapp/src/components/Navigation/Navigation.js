@@ -14,7 +14,6 @@ const Navigation = () => {
   }
 
   return (
-
     <nav className='nav'>
       <NavLink to='/'>
         <span>League</span>
@@ -25,9 +24,6 @@ const Navigation = () => {
       <NavLink to='/standings'>
         <span>Standings</span>
       </NavLink>
-      {/* <NavLink to='/favorites'>
-        <span>Favorites</span>
-      </NavLink> */}
       <NavLink to={!user && '/login'}>
         <div onClick={handleAuth} className='nav-option'>
           <span className='nav-option-lineone'>Hello {user ? user.email : 'Guest'}</span>

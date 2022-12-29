@@ -5,20 +5,16 @@ import { useParams } from 'react-router-dom'
 import './TeamDetails.css'
 import Loading from '../loading/Loading'
 
-const APIKEY = process.env.REACT_APP_API_KEY
-
 
 const TeamDetails = () => {
   const [teamInfo, setTeamInfo] = useState()
 
+  const APIKEY = process.env.REACT_APP_API_KEY
+
   const params = useParams()
-
   const obj = new URLSearchParams(params);
-
   const term = obj.get('Team')
-
   let results = `${baseurlPlayer}/Players/${term}?key=${APIKEY}`
-
 
   useEffect(() => {
     const teamData = async () => {
