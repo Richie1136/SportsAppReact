@@ -47,10 +47,8 @@ const PlayerDetails = () => {
   let proDebutYear = proDebutTime[2]
 
   let date = BirthDate
-  console.log(typeof date)
 
   date = new Date(date).toLocaleDateString().split("/")
-  console.log(typeof date)
 
   let birthMonth = date[0] < 10 ? `0${date[0]}` : `${date[0]}`
   let birthDay = date[1] < 10 ? `0${date[1]}` : `${date[1]}`

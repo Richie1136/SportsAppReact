@@ -37,13 +37,16 @@ const TeamDetails = () => {
 
   if (!teamInfo) return <Loading />
 
+  let sortJerseyAscending = active.sort((a, b) => a.Jersey - b.Jersey)
+
   return (
     <>
       <div className='team-roster-container'>
-        {active?.map(({ FirstName, MLBAMID, LastName, PlayerID }) => (
+        {active?.map(({ FirstName, MLBAMID, LastName, PlayerID, Jersey }) => (
           <Card key={MLBAMID} >
             <div className='player-info'>
-              {FirstName && <h2><a href={`/player/${PlayerID}`}>{FirstName} {LastName}</a></h2>}
+              <h2><a href={`/player/${PlayerID}`}>{FirstName} {LastName}</a></h2>
+              <h4>{Jersey}</h4>
             </div>
           </Card>
         ))
