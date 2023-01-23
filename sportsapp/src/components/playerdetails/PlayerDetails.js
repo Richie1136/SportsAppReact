@@ -3,20 +3,15 @@ import { useParams } from 'react-router-dom'
 import { baseurlPlayer } from '../../api/Api'
 import './PlayerDetails.css'
 
-const APIKEY = process.env.REACT_APP_API_KEY
-
-
 const PlayerDetails = () => {
   const [playerData, setPlayerData] = useState([])
 
+  const APIKEY = process.env.REACT_APP_API_KEY
+
   const params = useParams()
-
   const obj = new URLSearchParams(params);
-
   const term = obj.get('player_id')
-
   let results = `${baseurlPlayer}/Player/${term}?key=${APIKEY}`
-
 
   const today = new Date();
   const year = today.getFullYear();

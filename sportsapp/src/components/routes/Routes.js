@@ -1,11 +1,5 @@
-import Team from '../Team/Team'
 import { Routes, Route } from 'react-router-dom'
-import League from '../League/League';
-import Navigation from '../Navigation/Navigation'
-import TeamDetails from '../teamdetails/TeamDetails';
-import PlayerDetails from '../playerdetails/PlayerDetails'
-import Standings from '../standings/Standings';
-import Login from '../login/Login';
+import { League, Navigation, TeamDetails, PlayerDetails, Standings, Team, Login } from '../index'
 
 const AllRoutes = () => (
   <>
