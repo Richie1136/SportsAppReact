@@ -3,6 +3,7 @@ import { baseurlPlayer } from '../../api/Api'
 import './Standings.css'
 import Row from '../row/Row'
 import Loading from '../loading/Loading'
+import { useParams } from 'react-router-dom'
 
 const APIKEY = process.env.REACT_APP_API_KEY
 
@@ -10,12 +11,18 @@ const Standings = () => {
 
   const [standings, setStandings] = useState()
 
-  let results = `${baseurlPlayer}/Standings/2022?key=${APIKEY}`
+  // let results = `${baseurlPlayer}/Standings/2023?key=${APIKEY}`
+  // console.log(results)
+  const params = useParams()
+  const obj = new URLSearchParams(params);
+  const term = obj.get('year')
+  let rank = `${baseurlPlayer}/standings/${term}?key=${APIKEY}`
+  console.log(rank)
 
   useEffect(() => {
     const getStandings = async () => {
       try {
-        const response = await fetch(results)
+        const response = await fetch(rank)
         const data = await response.json()
         setStandings(data)
       } catch (error) {

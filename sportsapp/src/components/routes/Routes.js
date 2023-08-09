@@ -9,7 +9,7 @@ const AllRoutes = () => (
       <Route path='/' element={<League />} />
       <Route path='/team' element={<Team />} />
       <Route path='/:Team' element={<TeamDetails />} />
-      <Route path='/standings' element={<Standings />} />
+      <Route path='/standings/:year' element={<Standings />} />
       <Route path='/player/:player_id' element={<PlayerDetails />} />
     </Routes>
   </>

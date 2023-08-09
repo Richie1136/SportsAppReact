@@ -14,6 +14,7 @@ const TeamDetails = () => {
   const params = useParams()
   const obj = new URLSearchParams(params);
   const term = obj.get('Team')
+  console.log(term)
   let results = `${baseurlPlayer}/Players/${term}?key=${APIKEY}`
 
   useEffect(() => {

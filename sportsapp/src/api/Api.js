@@ -2,7 +2,7 @@
 
 // Used in the Standings component
 
-// https://api.sportsdata.io/v3/mlb/scores/json/Standings/2022
+// https://api.sportsdata.io/v3/mlb/scores/json/Standings/{season}
 
 // Used in the Player Details Component
 
