@@ -24,6 +24,7 @@ const Standings = () => {
       try {
         const response = await fetch(rank)
         const data = await response.json()
+        console.log(data)
         setStandings(data)
       } catch (error) {
         console.log(error)
@@ -41,7 +42,8 @@ const Standings = () => {
   let NLC = standings?.filter((status) => status.Division).filter((league) => league.League === 'NL').filter((division) => division.Division === 'Central')
   let NLW = standings?.filter((status) => status.Division).filter((league) => league.League === 'NL').filter((division) => division.Division === 'West')
 
-  let headers = (
+
+  const headers = () => (
     <>
       <th className='wins'>
         <span className='divisionspan'>
@@ -120,7 +122,7 @@ const Standings = () => {
                 <span className='division-title'>AL East</span>
               </span>
             </th>
-            {headers}
+            {headers()}
           </tr>
         </tbody>
         {ALE?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
@@ -133,7 +135,7 @@ const Standings = () => {
                 <span className='division-title'>AL Central</span>
               </span>
             </th>
-            {headers}
+            {headers()}
           </tr>
         </tbody>
         {ALC?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
@@ -146,7 +148,7 @@ const Standings = () => {
                 <span className='division-title'>AL West</span>
               </span>
             </th>
-            {headers}
+            {headers()}
           </tr>
         </tbody>
         {ALW?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
@@ -159,7 +161,7 @@ const Standings = () => {
                 <span className='division-title'>NL East</span>
               </span>
             </th>
-            {headers}
+            {headers()}
           </tr>
         </tbody>
         {NLE?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
@@ -172,7 +174,7 @@ const Standings = () => {
                 <span className='division-title'>NL Central</span>
               </span>
             </th>
-            {headers}
+            {headers()}
           </tr>
         </tbody>
         {NLC?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
@@ -185,7 +187,7 @@ const Standings = () => {
                 <span className='division-title'>NL West</span>
               </span>
             </th>
-            {headers}
+            {headers()}
           </tr>
         </tbody>
         {NLW?.map(({ Name, Wins, Losses, Percentage, GamesBehind, WildCardGamesBehind, LastTenGamesWins, LastTenGamesLosses, RunsScored, RunsAgainst, Streak, HomeWins, HomeLosses, AwayWins, AwayLosses }) => (
