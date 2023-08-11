@@ -51,6 +51,8 @@ const League = () => {
     displayData = NLW
   }
 
+  console.log(filteredResults)
+
   return (
     <div className='league'>
       <label>
@@ -69,7 +71,7 @@ const League = () => {
       {displayData?.map(({ StadiumID, team_id, website_url, logo, name_display_full, address_line1, address_city, address_state, address_zip, phone_number, venue_name }) => (
         <Card key={name_display_full}>
           <div className='insidecard'>
-            {website_url ? <h2><a href={`https://${website_url}`} target="_blank" rel='noreferrer'>{name_display_full}</a></h2> : <h2>{name_display_full}</h2>}
+            {website_url ? <h2><a href={`https://${website_url}`} target="_blank" rel='noreferrer'>{name_display_full} Website</a></h2> : <h2>{name_display_full}</h2>}
             <h5 className='venue'>{venue_name}</h5>
             <img src={logo} alt='Team Logo' />
             {address_line1 ? <h4>{address_line1}, {address_city}, {address_state} {address_zip}</h4> : null}

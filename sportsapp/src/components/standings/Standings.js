@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { baseurlPlayer } from '../../api/Api'
 import './Standings.css'
 import Row from '../row/Row'
@@ -10,6 +10,7 @@ const APIKEY = process.env.REACT_APP_API_KEY
 const Standings = () => {
 
   const [standings, setStandings] = useState()
+  const dataFetch = useRef(false)
 
   // let results = `${baseurlPlayer}/Standings/2023?key=${APIKEY}`
   // console.log(results)
@@ -20,11 +21,13 @@ const Standings = () => {
   console.log(rank)
 
   useEffect(() => {
+    if (dataFetch.current) return
+    dataFetch.current = true
     const getStandings = async () => {
       try {
         const response = await fetch(rank)
         const data = await response.json()
-        console.log(data)
+        console.count(data)
         setStandings(data)
       } catch (error) {
         console.log(error)
