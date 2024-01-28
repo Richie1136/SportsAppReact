@@ -13,8 +13,7 @@ const TeamDetails = () => {
 
   const params = useParams()
   const obj = new URLSearchParams(params);
-  const term = obj.get('Team')
-  console.log(term)
+  const term = obj.get('Key')
   let results = `${baseurlPlayer}/Players/${term}?key=${APIKEY}`
 
   useEffect(() => {
@@ -30,16 +29,20 @@ const TeamDetails = () => {
     teamData()
   }, [])
 
-  let active = teamInfo?.filter((status) => status.Status === 'Active')
+  console.log(teamInfo)
+
+
+  let currentPlayers = teamInfo?.filter((status) => status.Status === 'Active')
 
   if (!teamInfo) return <Loading />
 
-  let sortJerseyAscending = active.sort((a, b) => a.Jersey - b.Jersey)
+  let sortJerseyAscending = currentPlayers?.filter((jerseyNum) => jerseyNum.Jersey !== null).sort((a, b) => a.Jersey - b.Jersey)
+
 
   return (
     <>
       <div className='team-roster-container'>
-        {active?.map(({ FirstName, MLBAMID, LastName, PlayerID, Jersey }) => (
+        {sortJerseyAscending?.map(({ FirstName, MLBAMID, LastName, PlayerID, Jersey }) => (
           <Card key={MLBAMID} >
             <div className='player-info'>
               <h2><a href={`/player/${PlayerID}`}>{FirstName} {LastName}</a></h2>

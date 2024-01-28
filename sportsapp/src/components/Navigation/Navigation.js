@@ -21,7 +21,7 @@ const Navigation = () => {
       <NavLink to='/team'>
         <span>Team</span>
       </NavLink>
-      <NavLink to='/standings/2023'>
+      <NavLink to='/standings/:'>
         <span>Standings</span>
       </NavLink>
       <NavLink to={!user && '/login'}>

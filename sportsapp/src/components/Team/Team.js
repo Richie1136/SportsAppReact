@@ -1,24 +1,43 @@
 import Card from '../card/Card'
-import teamData from '../../teams.json'
+import { baseurlPlayer } from '../../api/Api'
 import './Team.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Team = () => {
+  const [teamData, setTeamData] = useState([])
   const [initialTeams, setIntialTeams] = useState(teamData)
+  const APIKEY = process.env.REACT_APP_API_KEY
+
+
+  let teamData2 = `${baseurlPlayer}/teams?key=${APIKEY}`
+
+  useEffect(() => {
+    const teamData = async () => {
+      try {
+        const response = await fetch(teamData2)
+        const teamData = await response.json()
+        setTeamData(teamData)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    teamData()
+  }, [teamData2])
   const [filteredResults, setFilteredResults] = useState(undefined)
 
-
-  let allTeams = teamData?.queryResults?.row
+  let allTeams = teamData
   let displayData = allTeams
 
-  let NL = teamData?.queryResults.row.filter((team) => team.league_full === 'National League')
-  let AL = teamData?.queryResults.row.filter((team) => team.league_full === 'American League')
-  let ALE = AL?.filter((status) => status.division).filter((league) => league.league === 'AL').filter((division) => division.division === 'E')
-  let ALC = AL?.filter((status) => status.division).filter((league) => league.league === 'AL').filter((division) => division.division === 'C')
-  let ALW = AL?.filter((status) => status.division).filter((league) => league.league === 'AL').filter((division) => division.division === 'W')
-  let NLE = NL?.filter((status) => status.division).filter((league) => league.league === 'NL').filter((division) => division.division === 'E')
-  let NLC = NL?.filter((status) => status.division).filter((league) => league.league === 'NL').filter((division) => division.division === 'C')
-  let NLW = NL?.filter((status) => status.division).filter((league) => league.league === 'NL').filter((division) => division.division === 'W')
+  console.log(teamData)
+
+  let NL = teamData?.filter((team) => team.League === 'NL')
+  let AL = teamData?.filter((team) => team.League === 'AL')
+  let ALE = AL?.filter((division) => division.Division === 'East')
+  let ALC = AL?.filter((division) => division.Division === 'Central')
+  let ALW = AL?.filter((division) => division.Division === 'West')
+  let NLE = NL?.filter((division) => division.Division === 'East')
+  let NLC = NL?.filter((division) => division.Division === 'Central')
+  let NLW = NL?.filter((division) => division.Division === 'West')
 
   const handleChange = (event) => {
     setIntialTeams(event.target.value)
@@ -52,9 +71,7 @@ const Team = () => {
     displayData = NLW
   }
 
-  console.log(filteredResults)
-
-
+  console.log(displayData)
 
   return (
     <div className='container'>
@@ -71,20 +88,19 @@ const Team = () => {
           <option multiple={false} value={"NL West"}>NL West</option>
         </select>
       </label>
-      {displayData?.map(({ name_display_full, logo, team_id, Team }) => (
+      {displayData?.map(({ name_display_full, TertiaryColor, PrimaryColor, HeadCoach, PitchingCoach, HittingCoach, Key, TeamID, City, logo, team_id, Team, Name, WikipediaLogoUrl }) => (
         <Card key={name_display_full}>
           <div className='team-info'>
-            {team_id ? <h2><a href={`/${Team}`}>{name_display_full} Roster</a></h2> : <h2>{name_display_full}</h2>}
-            <img src={logo} alt='Team Logo' />
+            {Key ? <h2 style={{ height: '55px' }}><a href={`/${Key}`}>{City} {Name} Roster</a></h2> : <h2>{City} {Name}</h2>}
+            <h4 style={{ color: '#' + PrimaryColor, marginBottom: '0' }}>Manager: {HeadCoach}</h4>
+            <h5>Hitting Coach: {HittingCoach}</h5>
+            <h5>Pitching Coach: {PitchingCoach}</h5>
+            <img src={WikipediaLogoUrl} alt='Team Logo' />
           </div>
         </Card>
       ))
       }
     </div>
-
   )
-
 }
-
-
 export default Team

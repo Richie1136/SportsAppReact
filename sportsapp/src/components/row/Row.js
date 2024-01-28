@@ -18,13 +18,12 @@ const Row = ({ Name, GamesBehind, Wins, Losses, Percentage, RunsScored, RunsAgai
         <span className='percentage'>{"." + Percentage.toFixed(3).split(".")[1]}</span>
       </td>
       <td className='teamData'>
-        <span className='gbh'>{GamesBehind === 0 ? '-' : GamesBehind}</span>
+        <span className='gbh'>{GamesBehind === 0 || GamesBehind === null ? '-' : GamesBehind}</span>
       </td>
       <td className='games'>
-        {/* {GamesBehind === 0 ? WildCardGamesBehind === '-' : WildCardGamesBehind} */}
         <span className='wcgbh'>
-          {GamesBehind === 0 ? WildCardGamesBehind === '-' : WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())}
-
+          {/* {GamesBehind === 0 ? WildCardGamesBehind === '-' : WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind.toString())} */}
+          {GamesBehind === null ? '-' : GamesBehind ? WildCardGamesBehind !== null && GamesBehind === 0 ? WildCardGamesBehind === '-' : WildCardGamesBehind === 0 ? '-' : WildCardGamesBehind > 0 ? WildCardGamesBehind : "+" + Math.abs(WildCardGamesBehind) : null}
         </span>
       </td>
       <td className='teamData'>

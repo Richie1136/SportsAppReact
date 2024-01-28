@@ -21,7 +21,6 @@ const PlayerDetails = () => {
       try {
         const response = await fetch(results)
         const playerInfo = await response.json()
-        console.log(playerInfo)
         setPlayerData(playerInfo)
       } catch (error) {
         console.log(error)
@@ -29,6 +28,8 @@ const PlayerDetails = () => {
     }
     playerData()
   }, [results])
+
+  console.log(playerData)
 
   const { Height, Weight, PhotoUrl, FirstName, LastName, Jersey, Position, BirthDate, ProDebut, BatHand, ThrowHand, College, BirthCity, BirthState, BirthCountry } = playerData
 

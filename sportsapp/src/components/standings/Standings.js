@@ -12,13 +12,19 @@ const Standings = () => {
   const [standings, setStandings] = useState()
   const dataFetch = useRef(false)
 
-  // let results = `${baseurlPlayer}/Standings/2023?key=${APIKEY}`
-  // console.log(results)
+  console.log(standings)
+
+
   const params = useParams()
   const obj = new URLSearchParams(params);
   const term = obj.get('year')
-  let rank = `${baseurlPlayer}/standings/${term}?key=${APIKEY}`
-  console.log(rank)
+  const { year } = useParams()
+  console.log(year)
+  let splitedValue = year?.split(":").slice(1, 2).toString()
+  console.log(splitedValue)
+
+  const result = splitedValue || 2023
+  let rank = `${baseurlPlayer}/standings/${result}?key=${APIKEY}`
 
   useEffect(() => {
     if (dataFetch.current) return
@@ -27,7 +33,6 @@ const Standings = () => {
       try {
         const response = await fetch(rank)
         const data = await response.json()
-        console.count(data)
         setStandings(data)
       } catch (error) {
         console.log(error)
